@@ -15,6 +15,26 @@ A personal knowledge management tool built around a DAG (knowledge graph). Intel
 
 ---
 
+## Workflow
+
+### 1. Extract a subgraph — `/extract-subgraph`
+
+Run the skill in Claude Code on a section of your notes. It produces a snapshot file `data/subgraph_<timestamp>.json` containing extracted nodes and edges. Nothing in the main graph is touched yet.
+
+### 2. Review (optional)
+
+Open the snapshot file and check the extracted concepts. Edit titles, synonyms, or descriptions directly in the JSON if needed.
+
+### 3. Merge into the DAG *(not yet implemented)*
+
+Run the merge skill. It compares the snapshot's nodes against `data/nodes.json` using synonym matching, reuses existing nodes where there is a match, creates new ones otherwise, and asks you where to attach the subgraph root. The result is written into `data/nodes.json` and `data/edges.json`.
+
+### 4. Browse and edit — webapp
+
+Start the webapp (`node server.js`, then open `http://localhost:3000`) to view the live graph as an indented list. From there you can add child nodes manually, copy a node ID to reference it in a skill, or delete a node and its entire subtree.
+
+---
+
 ## Skills
 
 Skills are run via Claude Code in your terminal.
@@ -56,7 +76,7 @@ A JSON file at `data/subgraph_<timestamp>.json`:
 }
 ```
 
-Each node gets exactly 10 synonyms generated from the input text — used later for matching when merging into the main graph.
+Each node gets 1 to 5 synonyms generated from the input text — used later for matching when merging into the main graph.
 
 ---
 

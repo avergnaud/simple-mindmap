@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(node *)"
+      "Bash(node *)",
+      "Bash(npm install *)",
+      "Bash(curl -s http://localhost:3000/api/graph)",
+      "Bash(copy \"C:\\\\Users\\\\a.vergnaud\\\\dev\\\\simple-mindmap\\\\simple-mindmap\\\\data\\\\subgraph_2026-05-22-15-46-43_nodes.json\" \"C:\\\\Users\\\\a.vergnaud\\\\dev\\\\simple-mindmap\\\\simple-mindmap\\\\data\\\\nodes.json\")",
+      "Bash(copy \"C:\\\\Users\\\\a.vergnaud\\\\dev\\\\simple-mindmap\\\\simple-mindmap\\\\data\\\\subgraph_2026-05-22-15-46-43_edges.json\" \"C:\\\\Users\\\\a.vergnaud\\\\dev\\\\simple-mindmap\\\\simple-mindmap\\\\data\\\\edges.json\")",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(f'{len\\(d[\\\\\"nodes\\\\\"]\\)} nodes, {len\\(d[\\\\\"edges\\\\\"]\\)} edges'\\)\")",
+      "Bash(curl *)"
     ]
   }
 }

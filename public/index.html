@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DAG KB</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: sans-serif; padding: 1.5rem; color: #222; }
+    h1 { font-size: 1.2rem; margin: 0 0 1rem; color: #555; }
+    ul { list-style: none; margin: 0; padding-left: 1.5rem; }
+    ul.root { padding-left: 0; }
+    li { margin: 0.2rem 0; }
+    .node-row { display: flex; align-items: center; gap: 0.4rem; padding: 0.15rem 0; }
+    .node-title { font-size: 0.95rem; }
+    button {
+      font-size: 0.75rem; padding: 0.1rem 0.4rem; cursor: pointer;
+      border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5;
+    }
+    button:hover { background: #e8e8e8; }
+    .btn-delete { color: #c00; border-color: #f99; }
+    .btn-delete:hover { background: #fee; }
+    .badge {
+      font-size: 0.7rem; padding: 0.1rem 0.35rem; background: #e0eaff;
+      border: 1px solid #99b; border-radius: 3px; cursor: pointer; color: #446;
+    }
+    .badge:hover { background: #ccdff5; }
+    .secondary-reveal {
+      font-size: 0.8rem; color: #557; margin: 0.1rem 0 0.2rem 0.2rem;
+      background: #f0f4ff; border-left: 2px solid #99b; padding: 0.2rem 0.5rem;
+      display: inline-block;
+    }
+    .add-form {
+      display: flex; gap: 0.4rem; align-items: center;
+      margin: 0.3rem 0 0.3rem 0.2rem; flex-wrap: wrap;
+    }
+    .add-form input {
+      font-size: 0.85rem; padding: 0.2rem 0.4rem;
+      border: 1px solid #bbb; border-radius: 3px;
+    }
+    .add-form input:first-child { width: 14rem; }
+    .add-form input:nth-child(2) { width: 18rem; }
+    .empty { color: #888; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <h1>DAG KB</h1>
+  <div id="tree"></div>
+
+  <script>
+    let graph = { nodes: [], edges: [] };
+
+    async function load() {
+      const res = await fetch('/api/graph');
+      graph = await res.json();
+      render();
+    }
+
+    function render() {
+      const container = document.getElementById('tree');
+      if (!graph.nodes.length) {
+        container.innerHTML = '<p class="empty">No nodes found. Populate data/nodes.json and data/edges.json to get started.</p>';
+        return;
+      }
+
+      const primaryTargets = new Set(graph.edges.filter(e => e.primary).map(e => e.target));
+      const roots = graph.nodes.filter(n => !primaryTargets.has(n.id));
+
+      const ul = document.createElement('ul');
+      ul.className = 'root';
+      for (const root of roots) ul.appendChild(renderNode(root));
+      container.innerHTML = '';
+      container.appendChild(ul);
+    }
+
+    function renderNode(node) {
+      const li = document.createElement('li');
+
+      const row = document.createElement('div');
+      row.className = 'node-row';
+
+      const title = document.createElement('span');
+      title.className = 'node-title';
+      title.textContent = node.title;
+      row.appendChild(title);
+
+      const secondaryParentEdges = graph.edges.filter(e => e.target === node.id && !e.primary);
+      if (secondaryParentEdges.length) {
+        const parentTitles = secondaryParentEdges
+          .map(e => graph.nodes.find(n => n.id === e.source)?.title)
+          .filter(Boolean);
+        const badge = document.createElement('span');
+        badge.className = 'badge';
+        badge.textContent = `+${parentTitles.length} parent${parentTitles.length > 1 ? 's' : ''}`;
+        badge.title = parentTitles.join(', ');
+        badge.onclick = () => {
+          const existing = li.querySelector('.secondary-reveal');
+          if (existing) { existing.remove(); return; }
+          const reveal = document.createElement('div');
+          reveal.className = 'secondary-reveal';
+          reveal.textContent = 'Also under: ' + parentTitles.join(', ');
+          row.after(reveal);
+        };
+        row.appendChild(badge);
+      }
+
+      const btnAdd = document.createElement('button');
+      btnAdd.textContent = '+';
+      btnAdd.title = 'Add child node';
+      btnAdd.onclick = () => toggleAddForm(node.id, li, row);
+      row.appendChild(btnAdd);
+
+      const btnCopy = document.createElement('button');
+      btnCopy.textContent = 'copy ID';
+      btnCopy.onclick = () => {
+        navigator.clipboard.writeText(node.id);
+        btnCopy.textContent = 'copied!';
+        setTimeout(() => { btnCopy.textContent = 'copy ID'; }, 1500);
+      };
+      row.appendChild(btnCopy);
+
+      const btnDelete = document.createElement('button');
+      btnDelete.textContent = 'delete';
+      btnDelete.className = 'btn-delete';
+      btnDelete.onclick = async () => {
+        if (!confirm(`Delete "${node.title}" and all its children?`)) return;
+        await fetch(`/api/nodes/${node.id}`, { method: 'DELETE' });
+        load();
+      };
+      row.appendChild(btnDelete);
+
+      li.appendChild(row);
+
+      const primaryChildren = graph.edges
+        .filter(e => e.source === node.id && e.primary)
+        .map(e => graph.nodes.find(n => n.id === e.target))
+        .filter(Boolean);
+
+      if (primaryChildren.length) {
+        const ul = document.createElement('ul');
+        for (const child of primaryChildren) ul.appendChild(renderNode(child));
+        li.appendChild(ul);
+      }
+
+      return li;
+    }
+
+    function toggleAddForm(parentId, li, row) {
+      const existing = li.querySelector('.add-form');
+      if (existing) { existing.remove(); return; }
+
+      const form = document.createElement('div');
+      form.className = 'add-form';
+
+      const titleInput = document.createElement('input');
+      titleInput.type = 'text';
+      titleInput.placeholder = 'Title (required)';
+
+      const descInput = document.createElement('input');
+      descInput.type = 'text';
+      descInput.placeholder = 'Description (optional)';
+
+      const btnSubmit = document.createElement('button');
+      btnSubmit.textContent = 'Add';
+      btnSubmit.onclick = async () => {
+        const t = titleInput.value.trim();
+        if (!t) { titleInput.focus(); return; }
+        const body = { parentId, title: t };
+        const d = descInput.value.trim();
+        if (d) body.description = d;
+        await fetch('/api/nodes', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+        });
+        load();
+      };
+
+      titleInput.addEventListener('keydown', e => { if (e.key === 'Enter') btnSubmit.click(); });
+
+      const btnCancel = document.createElement('button');
+      btnCancel.textContent = 'Cancel';
+      btnCancel.onclick = () => form.remove();
+
+      form.appendChild(titleInput);
+      form.appendChild(descInput);
+      form.appendChild(btnSubmit);
+      form.appendChild(btnCancel);
+
+      row.after(form);
+      titleInput.focus();
+    }
+
+    load();
+  </script>
+</body>
+</html>
