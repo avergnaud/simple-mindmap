@@ -1,0 +1,121 @@
+[
+  {
+    "id": "818e4e8e-8232-4254-b627-a716d0d3d823",
+    "title": "CISSP Domains (CBK)",
+    "synonyms": [
+      "CISSP CBK",
+      "Common Body of Knowledge",
+      "ISC2 Domains",
+      "CISSP Knowledge Domains"
+    ],
+    "description": "The eight domains defined by ISC² that make up the CISSP Common Body of Knowledge."
+  },
+  {
+    "id": "6b817d69-c8ae-49f1-b081-9a91fb0886aa",
+    "title": "Domain 1 - Security and Risk Management",
+    "synonyms": [
+      "Security and Risk Management",
+      "Risk Management",
+      "CISSP Domain 1"
+    ],
+    "description": "Covers foundational security concepts, risk management, governance, compliance, and ethics."
+  },
+  {
+    "id": "477ee520-17f8-491e-b7e8-f038977f3a90",
+    "title": "Domain 2 - Asset Security",
+    "synonyms": [
+      "Asset Security",
+      "Information Asset Management",
+      "CISSP Domain 2"
+    ],
+    "description": "Covers the classification, ownership, and protection of information and physical assets."
+  },
+  {
+    "id": "a0546b59-9087-48ce-a227-6a91088762ec",
+    "title": "Domain 3 - Security Architecture and Engineering",
+    "synonyms": [
+      "Security Architecture and Engineering",
+      "Security Architecture",
+      "CISSP Domain 3"
+    ],
+    "description": "Covers secure design principles, security models, cryptography, and physical security."
+  },
+  {
+    "id": "afa336b4-3a96-48a0-893e-b7f3fe918200",
+    "title": "Domain 4 - Communication and Network Security",
+    "synonyms": [
+      "Communication and Network Security",
+      "Network Security",
+      "CISSP Domain 4"
+    ],
+    "description": "Covers secure network architecture, transmission methods, and communication protocols."
+  },
+  {
+    "id": "565699fa-d961-4a0e-8201-dfb50c263112",
+    "title": "Domain 5 - Identity and Access Management",
+    "synonyms": [
+      "Identity and Access Management",
+      "IAM",
+      "CISSP Domain 5"
+    ],
+    "description": "Covers identification, authentication, authorization, and access control mechanisms."
+  },
+  {
+    "id": "53e5f07d-9e57-487a-85cc-868ec37ab9c1",
+    "title": "Domain 6 - Security Assessment and Testing",
+    "synonyms": [
+      "Security Assessment and Testing",
+      "Security Testing",
+      "CISSP Domain 6"
+    ],
+    "description": "Covers security assessments, penetration testing, audits, and logging and monitoring."
+  },
+  {
+    "id": "7369bd89-f2cd-4187-ba00-54218fa14003",
+    "title": "Domain 7 - Security Operations",
+    "synonyms": [
+      "Security Operations",
+      "SecOps",
+      "CISSP Domain 7"
+    ],
+    "description": "Covers incident response, investigations, disaster recovery, and operational security."
+  },
+  {
+    "id": "a62ce990-9c2c-46cd-8f6a-c2f4102c081a",
+    "title": "Domain 8 - Software Development Security",
+    "synonyms": [
+      "Software Development Security",
+      "Secure Software Development",
+      "CISSP Domain 8"
+    ],
+    "description": "Covers secure coding practices, software development lifecycle security, and application security."
+  },
+  {
+    "id": "1dbc17d5-c397-4cef-9bcb-e3583b408afe",
+    "title": "Security and Risk Management Frameworks",
+    "synonyms": [
+      "SRM frameworks",
+      "risk management frameworks",
+      "security frameworks"
+    ],
+    "description": "Structured models and standards used to guide security and risk management practices."
+  },
+  {
+    "id": "f5a91382-c48c-4c56-a8ea-7a24feb8a4c8",
+    "title": "Framework Types",
+    "synonyms": ["types of frameworks", "security framework categories", "framework categories"],
+    "description": "The different categories or classifications of security and risk management frameworks."
+  },
+  {
+    "id": "cd2c294a-ca92-44ee-88f3-5ddea4fb678d",
+    "title": "NIST",
+    "synonyms": ["National Institute of Standards and Technology", "NIST framework", "NIST CSF", "NIST RMF"],
+    "description": "US federal agency that publishes widely adopted cybersecurity and risk management frameworks."
+  },
+  {
+    "id": "67f2cff4-3547-417d-bb90-b2098d3ae615",
+    "title": "ISO/IEC",
+    "synonyms": ["ISO", "IEC", "International Organization for Standardization", "ISO/IEC standards", "ISO 27001"],
+    "description": "International standards body publishing security management standards such as the ISO/IEC 27000 series."
+  }
+]
