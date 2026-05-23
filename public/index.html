@@ -122,7 +122,6 @@
       btnDelete.textContent = 'delete';
       btnDelete.className = 'btn-delete';
       btnDelete.onclick = async () => {
-        if (!confirm(`Delete "${node.title}" and all its children?`)) return;
         await fetch(`/api/nodes/${node.id}`, { method: 'DELETE' });
         load();
       };

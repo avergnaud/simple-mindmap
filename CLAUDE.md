@@ -7,12 +7,15 @@ Personal knowledge management tool built around a DAG/knowledge graph. See `SPEC
 - **extract-subgraph** — Extract key concepts from input text into a subgraph JSON file.
   When the user types `/extract-subgraph`, invoke the Skill tool with `skill: "extract-subgraph"` before doing anything else.
 
+- **merge-subgraph** — Merge an extracted subgraph into the main DAG using synonym matching.
+  When the user types `/merge-subgraph`, invoke the Skill tool with `skill: "merge-subgraph"` before doing anything else.
+
 ## Key files
 
 - `config.json` — project config (`input_material_dir`)
 - `data/nodes.json` — all nodes in the DAG
 - `data/edges.json` — all edges in the DAG
-- `data/subgraph_*.json` — extracted subgraphs (skill output, not yet merged)
+- `data/subgraph_*_nodes.json` / `data/subgraph_*_edges.json` — extracted subgraphs (skill output, not yet merged)
 
 ## Think Before Coding
 

@@ -41,7 +41,7 @@ Analyze the text and identify the key concepts. For each concept, produce a node
 | Field | Rules |
 |---|---|
 | `id` | One of the pre-generated UUIDs |
-| `title` | Short label, 2–6 words |
+| `title` | Short label, 2–6 words. If the source text explicitly numbers items using a keyword such as "Domain", "Step", "Stage", "Phase", "Layer", or "Level", include that prefix: e.g. `Domain 1 - Security and Risk Management`. |
 | `synonyms` | **1 to 5** alternative names, abbreviations, or phrasings. Use context from the input text (e.g. if the text says "NIST RMF", include both "NIST Risk Management Framework" and "RMF"). |
 | `description` | One-sentence summary. Omit the field if the text doesn't provide enough context. |
 

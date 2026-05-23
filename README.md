@@ -25,9 +25,9 @@ Run the skill in Claude Code on a section of your notes. It produces a snapshot 
 
 Open the snapshot file and check the extracted concepts. Edit titles, synonyms, or descriptions directly in the JSON if needed.
 
-### 3. Merge into the DAG *(not yet implemented)*
+### 3. Merge into the DAG — `/merge-subgraph`
 
-Run the merge skill. It compares the snapshot's nodes against `data/nodes.json` using synonym matching, reuses existing nodes where there is a match, creates new ones otherwise, and asks you where to attach the subgraph root. The result is written into `data/nodes.json` and `data/edges.json`.
+Run the skill in Claude Code. It compares the subgraph's nodes against `data/nodes.json` using synonym matching, reuses existing nodes where there is a match, creates new ones otherwise, and asks you where to attach the subgraph root. The result is appended into `data/nodes.json` and `data/edges.json`. The subgraph files are deleted on success.
 
 ### 4. Browse and edit — webapp
 
@@ -78,6 +78,28 @@ A JSON file at `data/subgraph_<timestamp>.json`:
 
 Each node gets 1 to 5 synonyms generated from the input text — used later for matching when merging into the main graph.
 
+### `/merge-subgraph`
+
+Merges a `data/subgraph_*` pair into the main DAG using synonym-based deduplication.
+
+**How to invoke:**
+
+1. Open Claude Code in the project directory.
+2. Type `/merge-subgraph`.
+3. If multiple subgraphs exist, choose which to merge.
+4. When prompted, paste the ID of the existing node that should be the parent of the subgraph root (copy it from the webapp or from `data/nodes.json`).
+
+**What happens:**
+
+- **Synonym matching**: each subgraph node is compared against all existing nodes (title and synonyms, case-insensitive). Matching nodes are reused; non-matching nodes are added as new.
+- **Edge remapping**: all subgraph edges are rewritten with resolved IDs. Self-loops and duplicates are dropped.
+- **Attachment edge**: a `"contains"` primary edge is added from the chosen parent to the subgraph root.
+- **Cleanup**: the `data/subgraph_<timestamp>_nodes.json` and `_edges.json` files are deleted after a successful merge.
+
+**What you get:**
+
+A report: how many nodes were new vs matched, how many edges were added, and the attachment point.
+
 ---
 
 ## Data files
@@ -86,5 +108,6 @@ Each node gets 1 to 5 synonyms generated from the input text — used later for 
 |---|---|
 | `data/nodes.json` | All nodes in the main DAG |
 | `data/edges.json` | All edges in the main DAG |
-| `data/subgraph_*.json` | Extracted subgraphs, not yet merged |
+| `data/subgraph_*_nodes.json` | Extracted subgraph nodes, not yet merged |
+| `data/subgraph_*_edges.json` | Extracted subgraph edges, not yet merged |
 | `config.json` | Project configuration |
