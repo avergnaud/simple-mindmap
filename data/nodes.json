@@ -115,7 +115,7 @@
   {
     "id": "67f2cff4-3547-417d-bb90-b2098d3ae615",
     "title": "ISO/IEC",
-    "synonyms": ["ISO", "IEC", "International Organization for Standardization", "ISO/IEC standards", "ISO 27001"],
+    "synonyms": ["ISO", "IEC", "International Organization for Standardization", "ISO/IEC standards"],
     "description": "International standards body publishing security management standards such as the ISO/IEC 27000 series."
   },
   {
@@ -173,5 +173,11 @@
     "title": "NIST CSF 2.0",
     "synonyms": ["NIST Cybersecurity Framework 2.0", "CSF 2.0", "Cybersecurity Framework 2.0"],
     "description": "A voluntary outcome-based cybersecurity framework published by NIST."
+  },
+  {
+    "id": "679dafe8-4041-46b7-aea7-0838b1336d62",
+    "title": "ISO 27001 (ISMS)",
+    "synonyms": ["ISO 27001", "ISO/IEC 27001", "ISMS standard", "Information Security Management System"],
+    "description": "International standard specifying requirements for an Information Security Management System (ISMS), certifiable by accredited bodies."
   }
 ]
