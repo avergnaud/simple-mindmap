@@ -115,7 +115,7 @@ A single-page web application served on localhost (e.g. `http://localhost:3000`)
 - Indentation is determined by the **primary parent** hierarchy only.
 - The root node appears at the top level.
 - Children are indented below their primary parent.
-- **Secondary parents** (non-primary edges pointing to a node) are not shown as indentation links. Instead, a subtle visual hint on the node (e.g. a small icon or badge) indicates that other parent relationships exist. Clicking it reveals the list of secondary parents.
+- **Secondary parents** (non-primary edges pointing to a node) are shown as **ghost rows**: the node appears again under each secondary parent, but rendered in a muted style (greyed/italic) and prefixed with an arrow icon (e.g. `↗`) to indicate it is a reference, not the canonical location. Ghost rows are not expandable — their children are only shown under the primary parent. Clicking a ghost row jumps to (and scrolls into view) the canonical occurrence under the primary parent.
 - The UI must be as simple as possible — no fancy graph layout, no dragging, no canvas. Just an indented list.
 
 ### Features

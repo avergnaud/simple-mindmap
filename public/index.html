@@ -19,15 +19,15 @@
     button:hover { background: #e8e8e8; }
     .btn-delete { color: #c00; border-color: #f99; }
     .btn-delete:hover { background: #fee; }
-    .badge {
-      font-size: 0.7rem; padding: 0.1rem 0.35rem; background: #e0eaff;
-      border: 1px solid #99b; border-radius: 3px; cursor: pointer; color: #446;
+    .ghost .node-row { cursor: pointer; }
+    .ghost .node-title {
+      color: #888; font-style: italic;
     }
-    .badge:hover { background: #ccdff5; }
-    .secondary-reveal {
-      font-size: 0.8rem; color: #557; margin: 0.1rem 0 0.2rem 0.2rem;
-      background: #f0f4ff; border-left: 2px solid #99b; padding: 0.2rem 0.5rem;
-      display: inline-block;
+    .ghost-arrow { color: #888; font-style: normal; margin-right: 0.2rem; }
+    .highlight > .node-row {
+      background: #fff3b0;
+      transition: background 0.4s ease;
+      border-radius: 3px;
     }
     .add-form {
       display: flex; gap: 0.4rem; align-items: center;
@@ -74,6 +74,7 @@
 
     function renderNode(node) {
       const li = document.createElement('li');
+      li.id = `node-${node.id}`;
 
       const row = document.createElement('div');
       row.className = 'node-row';
@@ -82,26 +83,6 @@
       title.className = 'node-title';
       title.textContent = node.title;
       row.appendChild(title);
-
-      const secondaryParentEdges = graph.edges.filter(e => e.target === node.id && !e.primary);
-      if (secondaryParentEdges.length) {
-        const parentTitles = secondaryParentEdges
-          .map(e => graph.nodes.find(n => n.id === e.source)?.title)
-          .filter(Boolean);
-        const badge = document.createElement('span');
-        badge.className = 'badge';
-        badge.textContent = `+${parentTitles.length} parent${parentTitles.length > 1 ? 's' : ''}`;
-        badge.title = parentTitles.join(', ');
-        badge.onclick = () => {
-          const existing = li.querySelector('.secondary-reveal');
-          if (existing) { existing.remove(); return; }
-          const reveal = document.createElement('div');
-          reveal.className = 'secondary-reveal';
-          reveal.textContent = 'Also under: ' + parentTitles.join(', ');
-          row.after(reveal);
-        };
-        row.appendChild(badge);
-      }
 
       const btnAdd = document.createElement('button');
       btnAdd.textContent = '+';
@@ -134,12 +115,48 @@
         .map(e => graph.nodes.find(n => n.id === e.target))
         .filter(Boolean);
 
-      if (primaryChildren.length) {
+      const secondaryChildren = graph.edges
+        .filter(e => e.source === node.id && !e.primary)
+        .map(e => graph.nodes.find(n => n.id === e.target))
+        .filter(Boolean);
+
+      if (primaryChildren.length || secondaryChildren.length) {
         const ul = document.createElement('ul');
         for (const child of primaryChildren) ul.appendChild(renderNode(child));
+        for (const child of secondaryChildren) ul.appendChild(renderGhost(child));
         li.appendChild(ul);
       }
 
+      return li;
+    }
+
+    function renderGhost(node) {
+      const li = document.createElement('li');
+      li.className = 'ghost';
+
+      const row = document.createElement('div');
+      row.className = 'node-row';
+      row.title = 'Jump to canonical location';
+
+      const arrow = document.createElement('span');
+      arrow.className = 'ghost-arrow';
+      arrow.textContent = '↗';
+      row.appendChild(arrow);
+
+      const title = document.createElement('span');
+      title.className = 'node-title';
+      title.textContent = node.title;
+      row.appendChild(title);
+
+      row.onclick = () => {
+        const canonical = document.getElementById(`node-${node.id}`);
+        if (!canonical) return;
+        canonical.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        canonical.classList.add('highlight');
+        setTimeout(() => canonical.classList.remove('highlight'), 1000);
+      };
+
+      li.appendChild(row);
       return li;
     }
 
