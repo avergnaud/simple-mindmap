@@ -167,5 +167,11 @@
     "id": "0151705d-7004-416f-b734-7b7ccfc30de7",
     "title": "Vocabulary",
     "synonyms": ["Glossary", "Terminology", "Definitions"]
+  },
+  {
+    "id": "18374ced-5b4a-4706-b4b4-c57bea738aea",
+    "title": "NIST CSF 2.0",
+    "synonyms": ["NIST Cybersecurity Framework 2.0", "CSF 2.0", "Cybersecurity Framework 2.0"],
+    "description": "A voluntary outcome-based cybersecurity framework published by NIST."
   }
 ]
