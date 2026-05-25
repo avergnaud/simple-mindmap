@@ -679,7 +679,7 @@
   },
   {
     "id": "fb08d7b0-7942-4863-a6b3-5755f07086ae",
-    "title": "Organizational Context",
+    "title": "Organizational Context (GV.OC)",
     "synonyms": [
       "Business context",
       "Organizational mission and stakeholders"
@@ -691,7 +691,7 @@
   },
   {
     "id": "4097cbb7-f0b4-4a00-bdd7-f097e2df7f0d",
-    "title": "Cybersecurity Risk Management Strategy",
+    "title": "Risk Management Strategy (GV.RM)",
     "synonyms": [
       "Cyber risk strategy",
       "Risk management strategy"
@@ -727,7 +727,7 @@
   },
   {
     "id": "c279bd43-1299-41ef-98f8-90bcedbb2932",
-    "title": "Supply Chain Risk Management",
+    "title": "Cybersecurity Supply Chain Risk Management (GV.SC)",
     "synonyms": [
       "SCRM",
       "C-SCRM",
@@ -776,7 +776,7 @@
   },
   {
     "id": "9d58aec1-99c3-4f2c-a266-365762cbd9a0",
-    "title": "Asset Inventory",
+    "title": "Asset Management (ID.AM)",
     "synonyms": [
       "Asset management",
       "Inventory of hardware software data and people"
@@ -800,7 +800,7 @@
   },
   {
     "id": "07517423-9932-43c6-8bad-4b5c26362f33",
-    "title": "Risk Assessment (RA)",
+    "title": "Risk Assessment (RA) (ID.RA)",
     "synonyms": [
       "Cyber risk assessment",
       "Risk analysis"
@@ -824,7 +824,7 @@
   },
   {
     "id": "c78a19c4-faff-44a8-a4b0-20ec3447cb84",
-    "title": "Access Control (CSF)",
+    "title": "Identity Management, Authentication, and Access Control (PR.AA)",
     "synonyms": [
       "PR.AA",
       "CSF Access Control"
@@ -836,7 +836,7 @@
   },
   {
     "id": "2887cde7-0880-47ce-84cb-d19de9180148",
-    "title": "Awareness and Training",
+    "title": "Awareness and Training (PR.AT)",
     "synonyms": [
       "Security awareness",
       "User training"
@@ -848,7 +848,7 @@
   },
   {
     "id": "ffab8989-5042-4cb2-8125-5ee3329347af",
-    "title": "Data Security",
+    "title": "Data Security (PR.DS)",
     "synonyms": [
       "Encryption and DLP",
       "Data protection"
@@ -884,7 +884,7 @@
   },
   {
     "id": "3c80885d-559f-4529-a072-fd1b8feb6fc4",
-    "title": "Technology Platform Security",
+    "title": "Platform Security (PR.PS)",
     "synonyms": [
       "Platform security",
       "Protective technology"
@@ -896,7 +896,7 @@
   },
   {
     "id": "ee9bfdfe-6d51-4ab0-955f-95ad9b83d244",
-    "title": "Continuous Monitoring",
+    "title": "Continuous Monitoring (DE.CM)",
     "synonyms": [
       "Security continuous monitoring",
       "ISCM"
@@ -908,7 +908,7 @@
   },
   {
     "id": "a661c5e4-e2c6-491b-8616-2cabe311eb53",
-    "title": "Anomaly and Event Analysis",
+    "title": "Adverse Event Analysis (DE.AE)",
     "synonyms": [
       "Anomaly detection",
       "Event analysis"
@@ -956,7 +956,7 @@
   },
   {
     "id": "4ab472d1-dd96-4aa4-a47c-d09fd9906e66",
-    "title": "Incident Communications",
+    "title": "Incident Response Reporting and Communication (RS.CO)",
     "synonyms": [
       "Internal and external communications",
       "Regulatory notification"
@@ -980,7 +980,7 @@
   },
   {
     "id": "dd712ddd-0eab-47bb-9da7-2fd5a1df667f",
-    "title": "Mitigation",
+    "title": "Mitigation (RS.MI)",
     "synonyms": [
       "Incident mitigation",
       "Containment and mitigation"
@@ -1004,7 +1004,7 @@
   },
   {
     "id": "8911d023-59a5-42a3-b569-105cdb567011",
-    "title": "Recovery Planning",
+    "title": "Incident Recovery Plan Execution (RC.RP)",
     "synonyms": [
       "Recovery plan",
       "Disaster recovery planning"
@@ -1028,7 +1028,7 @@
   },
   {
     "id": "feb37728-83f6-4f5e-bc7b-8c0c3e899793",
-    "title": "Recovery Communication",
+    "title": "Incident Recovery Communication (RC.CO)",
     "synonyms": [
       "Communications during recovery",
       "Recovery stakeholder communication"
@@ -1162,6 +1162,127 @@
       "operational management system"
     ],
     "description": "Intent value: the framework's purpose is to define a management system that runs the security function.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "49ff5bd8-c81f-4346-9fcd-4c0266b75992",
+    "title": "Categories (GV)",
+    "synonyms": []
+  },
+  {
+    "id": "b9bc366a-d4cd-451e-b9cd-123171681ff3",
+    "title": "Categories (ID)",
+    "synonyms": []
+  },
+  {
+    "id": "e10db438-1811-4d34-8778-f81340323df5",
+    "title": "Categories (PR)",
+    "synonyms": []
+  },
+  {
+    "id": "91c5ee5b-8640-4627-8119-07212511aa1a",
+    "title": "Categories (DE)",
+    "synonyms": []
+  },
+  {
+    "id": "621f3078-6065-483c-80d8-8114b860c925",
+    "title": "Categories (RS)",
+    "synonyms": []
+  },
+  {
+    "id": "150aadfb-19b2-4882-bd6a-98fdca302303",
+    "title": "Categories (RC)",
+    "synonyms": []
+  },
+  {
+    "id": "752f6cd5-e35a-40b0-a64c-15b77ca2ca45",
+    "title": "Roles, Responsibilities, and Authorities (GV.RR)",
+    "synonyms": [
+      "GV.RR",
+      "Cybersecurity roles and responsibilities",
+      "Accountability structure"
+    ],
+    "description": "Establishing and communicating cybersecurity roles, responsibilities, and authorities to foster accountability, performance assessment, and continuous improvement.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "c2e376b1-4d20-4bb2-afe8-d2f542ccb56a",
+    "title": "Policy (GV.PO)",
+    "synonyms": [
+      "GV.PO",
+      "Cybersecurity policy",
+      "Information security policy"
+    ],
+    "description": "Establishing, communicating, and enforcing organizational cybersecurity policy.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "133f83ed-64a3-4bf0-bf31-a4166737ff3e",
+    "title": "Oversight (GV.OV)",
+    "synonyms": [
+      "GV.OV",
+      "Cybersecurity program oversight",
+      "Governance review"
+    ],
+    "description": "Using results of organization-wide cybersecurity risk management activities and performance to inform, improve, and adjust the risk management strategy.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "42e3585d-0805-4933-8d04-f1fd522b1a0a",
+    "title": "Improvement (ID.IM)",
+    "synonyms": [
+      "ID.IM",
+      "Continuous improvement",
+      "Lessons learned identification"
+    ],
+    "description": "Identifying improvements to organizational cybersecurity risk management processes, procedures, and activities across all CSF Functions.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "de4374d6-ecb9-4526-8a83-8708bbdeef4f",
+    "title": "Technology Infrastructure Resilience (PR.IR)",
+    "synonyms": [
+      "PR.IR",
+      "Infrastructure resilience",
+      "Network and system resilience"
+    ],
+    "description": "Managing security architectures with the resilience properties to protect organizational asset confidentiality, integrity, and availability, and organizational resilience.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "bf19be17-0f01-48b7-bcf6-089483f69753",
+    "title": "Incident Management (RS.MA)",
+    "synonyms": [
+      "RS.MA",
+      "Incident response coordination",
+      "Incident handling"
+    ],
+    "description": "Managing responses to detected cybersecurity incidents, including triage, validation, categorization, prioritization, escalation, and closure.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "3a863c4c-bc26-41c7-b235-2913d8209a2c",
+    "title": "Incident Analysis (RS.AN)",
+    "synonyms": [
+      "RS.AN",
+      "Incident investigation",
+      "Incident root cause analysis"
+    ],
+    "description": "Performing investigation and analysis to ensure effective response and support recovery activities, including determining incident scope, root cause, and impact.",
     "types": [
       "descriptive"
     ]

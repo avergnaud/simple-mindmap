@@ -13,7 +13,12 @@
       "Bash(wait)",
       "Bash(netstat -ano)",
       "Bash(node ./server.js)",
-      "Bash(disown)"
+      "Bash(disown)",
+      "Bash(python *)",
+      "WebSearch",
+      "WebFetch(domain:www.nist.gov)",
+      "WebFetch(domain:csf.tools)",
+      "WebFetch(domain:medium.com)"
     ]
   }
 }
