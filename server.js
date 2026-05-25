@@ -47,6 +47,51 @@ app.post('/api/nodes', (req, res) => {
   res.json(newNode);
 });
 
+app.post('/api/nodes/:id/move', (req, res) => {
+  const { id } = req.params;
+  const { direction } = req.body;
+  if (direction !== 'up' && direction !== 'down') {
+    return res.status(400).json({ error: 'direction must be "up" or "down"' });
+  }
+
+  const edges = readJSON(EDGES_FILE);
+  const primaryEdge = edges.find(e => e.primary && e.target === id);
+  if (!primaryEdge) return res.status(404).json({ error: 'no primary edge for node' });
+
+  const siblings = edges
+    .filter(e => e.primary && e.source === primaryEdge.source)
+    .sort((a, b) => (a.order ?? Number.MAX_SAFE_INTEGER) - (b.order ?? Number.MAX_SAFE_INTEGER));
+
+  const idx = siblings.indexOf(primaryEdge);
+  const swapIdx = direction === 'up' ? idx - 1 : idx + 1;
+  if (swapIdx < 0 || swapIdx >= siblings.length) {
+    return res.status(400).json({ error: 'cannot move beyond boundary' });
+  }
+
+  [siblings[idx], siblings[swapIdx]] = [siblings[swapIdx], siblings[idx]];
+  siblings.forEach((e, i) => { e.order = i; });
+
+  writeJSON(EDGES_FILE, edges);
+  res.json({ ok: true });
+});
+
+app.patch('/api/nodes/:id', (req, res) => {
+  const { id } = req.params;
+  const { title } = req.body;
+  if (typeof title !== 'string' || !title.trim()) {
+    return res.status(400).json({ error: 'title must be a non-empty string' });
+  }
+
+  const nodes = readJSON(NODES_FILE);
+  const node = nodes.find(n => n.id === id);
+  if (!node) return res.status(404).json({ error: 'node not found' });
+
+  node.title = title.trim();
+  writeJSON(NODES_FILE, nodes);
+
+  res.json(node);
+});
+
 app.delete('/api/nodes/:id', (req, res) => {
   const { id } = req.params;
   let nodes = readJSON(NODES_FILE);

@@ -536,7 +536,7 @@
   },
   {
     "id": "f490639c-b22c-45db-89e2-838693d88025",
-    "title": "Govern",
+    "title": "Govern (GV)",
     "synonyms": [
       "GV",
       "Govern function"
@@ -548,7 +548,7 @@
   },
   {
     "id": "d3c96515-afd1-4d76-b228-09ac176ce3c1",
-    "title": "Identify",
+    "title": "Identify (ID)",
     "synonyms": [
       "ID",
       "Identify function"
@@ -560,7 +560,7 @@
   },
   {
     "id": "cb041be5-f2d5-49ef-96d6-3b756335fd2e",
-    "title": "Protect",
+    "title": "Protect (PR)",
     "synonyms": [
       "PR",
       "Protect function"
@@ -572,7 +572,7 @@
   },
   {
     "id": "ad7a6b22-d247-4ce7-aa62-da8210efb85e",
-    "title": "Detect",
+    "title": "Detect (DE)",
     "synonyms": [
       "DE",
       "Detect function"
@@ -584,7 +584,7 @@
   },
   {
     "id": "f5d4c734-789a-4239-900c-1c8f7eaa2ed3",
-    "title": "Respond",
+    "title": "Respond (RS)",
     "synonyms": [
       "RS",
       "Respond function"
@@ -596,7 +596,7 @@
   },
   {
     "id": "393eec04-7b2e-44af-86a9-607f86b3fa1f",
-    "title": "Recover",
+    "title": "Recover (RC)",
     "synonyms": [
       "RC",
       "Recover function"
@@ -800,7 +800,7 @@
   },
   {
     "id": "07517423-9932-43c6-8bad-4b5c26362f33",
-    "title": "Risk Assessment",
+    "title": "Risk Assessment (RA)",
     "synonyms": [
       "Cyber risk assessment",
       "Risk analysis"
@@ -1046,6 +1046,122 @@
       "Return to normal operations"
     ],
     "description": "Recovery aims to return the organization to normal operations within the RTO/RPO thresholds defined in the Business Impact Analysis.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "fb5c6cdf-1197-458c-be23-fabbd1cbd8a3",
+    "title": "Framework classification dimensions",
+    "synonyms": []
+  },
+  {
+    "id": "98972149-b2d3-4f78-ae29-4aafeba7342e",
+    "title": "Authority",
+    "synonyms": [
+      "authority axis",
+      "source of authority",
+      "authority dimension"
+    ],
+    "description": "One of the three classification axes; concerns the source or basis of a framework's authority.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "e11a9975-8201-40e8-8643-4472ed9f3fd6",
+    "title": "Structure",
+    "synonyms": [
+      "structure axis",
+      "structural form",
+      "structure dimension"
+    ],
+    "description": "One of the three classification axes; concerns the structural form of a framework.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "6fedcfd1-f7dc-45db-9fc9-5fe29ea3dcdf",
+    "title": "Intent",
+    "synonyms": [
+      "intent axis",
+      "purpose",
+      "intent dimension"
+    ],
+    "description": "One of the three classification axes; concerns the purpose or intent of a framework.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "44fefde2-3b8e-40d0-97d4-b57e62cca73a",
+    "title": "Voluntary",
+    "synonyms": [
+      "voluntary authority",
+      "non-mandatory adoption"
+    ],
+    "description": "Authority value: the framework is adopted voluntarily, without a binding obligation.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "9a0acd88-5cc9-4327-9de6-de19c16a119f",
+    "title": "Certifiable",
+    "synonyms": [
+      "certifiable authority",
+      "certification-bearing"
+    ],
+    "description": "Authority value: the framework supports formal certification by an accredited body.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "73bc7960-5d26-4085-97ca-4aca7f9c943a",
+    "title": "Outcomes",
+    "synonyms": [
+      "outcome-oriented structure",
+      "outcomes-based"
+    ],
+    "description": "Structure value: the framework is organized around desired outcomes rather than specific rules.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "039c83b4-f1a9-4eb0-abc6-1244f3137c5c",
+    "title": "Requirements",
+    "synonyms": [
+      "requirements-based structure",
+      "requirements-oriented"
+    ],
+    "description": "Structure value: the framework is organized around explicit requirements to be satisfied.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "f321888d-2555-408e-8cac-ac67858924d4",
+    "title": "Common language",
+    "synonyms": [
+      "shared vocabulary",
+      "lingua franca intent"
+    ],
+    "description": "Intent value: the framework's purpose is to provide a common language across stakeholders.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "2be25ca7-3e9a-4a60-92d3-9bf31a2158d2",
+    "title": "Management system",
+    "synonyms": [
+      "management system intent",
+      "operational management system"
+    ],
+    "description": "Intent value: the framework's purpose is to define a management system that runs the security function.",
     "types": [
       "descriptive"
     ]

@@ -12,6 +12,12 @@
     li { margin: 0.2rem 0; }
     .node-row { display: flex; align-items: center; gap: 0.4rem; padding: 0.15rem 0; }
     .node-title { font-size: 0.95rem; }
+    li:not(.ghost) > .node-row > .node-title { cursor: text; }
+    .title-edit {
+      font-size: 0.95rem; padding: 0.05rem 0.3rem;
+      border: 1px solid #bbb; border-radius: 3px;
+      font-family: inherit; min-width: 14rem;
+    }
     .illustrative > .node-row .node-title { color: #888; }
     button {
       font-size: 0.75rem; padding: 0.1rem 0.4rem; cursor: pointer;
@@ -131,6 +137,24 @@
       localStorage.setItem(STORAGE_KEY, JSON.stringify([...expandedSet]));
     }
 
+    function siblingPosition(nodeId) {
+      const primaryEdge = graph.edges.find(e => e.primary && e.target === nodeId);
+      if (!primaryEdge) return { idx: -1, count: 0 };
+      const siblings = graph.edges
+        .filter(e => e.primary && e.source === primaryEdge.source)
+        .sort((a, b) => (a.order ?? Number.MAX_SAFE_INTEGER) - (b.order ?? Number.MAX_SAFE_INTEGER));
+      return { idx: siblings.indexOf(primaryEdge), count: siblings.length };
+    }
+
+    async function moveNode(nodeId, direction) {
+      await fetch(`/api/nodes/${nodeId}/move`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ direction })
+      });
+      load();
+    }
+
     function computeRoots() {
       const primaryTargets = new Set(graph.edges.filter(e => e.primary).map(e => e.target));
       return graph.nodes.filter(n => !primaryTargets.has(n.id));
@@ -178,6 +202,7 @@
 
       const primaryChildren = graph.edges
         .filter(e => e.source === node.id && e.primary)
+        .sort((a, b) => (a.order ?? Number.MAX_SAFE_INTEGER) - (b.order ?? Number.MAX_SAFE_INTEGER))
         .map(e => graph.nodes.find(n => n.id === e.target))
         .filter(Boolean);
 
@@ -210,7 +235,25 @@
       const title = document.createElement('span');
       title.className = 'node-title';
       title.textContent = node.title;
+      title.title = 'Double-click to edit';
+      title.ondblclick = () => startEditTitle(node, title);
       row.appendChild(title);
+
+      const { idx: sibIdx, count: sibCount } = siblingPosition(node.id);
+      if (sibIdx > 0) {
+        const btnUp = document.createElement('button');
+        btnUp.textContent = '▲';
+        btnUp.title = 'Move up';
+        btnUp.onclick = () => moveNode(node.id, 'up');
+        row.appendChild(btnUp);
+      }
+      if (sibIdx >= 0 && sibIdx < sibCount - 1) {
+        const btnDown = document.createElement('button');
+        btnDown.textContent = '▼';
+        btnDown.title = 'Move down';
+        btnDown.onclick = () => moveNode(node.id, 'down');
+        row.appendChild(btnDown);
+      }
 
       const btnAdd = document.createElement('button');
       btnAdd.textContent = '+';
@@ -280,6 +323,51 @@
 
       li.appendChild(row);
       return li;
+    }
+
+    function startEditTitle(node, titleEl) {
+      if (titleEl.querySelector('input')) return;
+
+      const original = node.title;
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.className = 'title-edit';
+      input.value = original;
+
+      titleEl.textContent = '';
+      titleEl.appendChild(input);
+      input.focus();
+      input.select();
+
+      let done = false;
+      const finish = async (save) => {
+        if (done) return;
+        done = true;
+        const next = input.value.trim();
+        if (!save || !next || next === original) {
+          titleEl.textContent = original;
+          return;
+        }
+        try {
+          const res = await fetch(`/api/nodes/${node.id}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ title: next })
+          });
+          if (!res.ok) throw new Error('save failed');
+          node.title = next;
+          load();
+        } catch {
+          titleEl.textContent = original;
+          alert('Failed to save title');
+        }
+      };
+
+      input.addEventListener('keydown', e => {
+        if (e.key === 'Enter') { e.preventDefault(); finish(true); }
+        else if (e.key === 'Escape') { e.preventDefault(); finish(false); }
+      });
+      input.addEventListener('blur', () => finish(true));
     }
 
     function toggleAddForm(parentId, li, row) {

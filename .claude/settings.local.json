@@ -8,7 +8,12 @@
       "Bash(copy \"C:\\\\Users\\\\a.vergnaud\\\\dev\\\\simple-mindmap\\\\simple-mindmap\\\\data\\\\subgraph_2026-05-22-15-46-43_edges.json\" \"C:\\\\Users\\\\a.vergnaud\\\\dev\\\\simple-mindmap\\\\simple-mindmap\\\\data\\\\edges.json\")",
       "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(f'{len\\(d[\\\\\"nodes\\\\\"]\\)} nodes, {len\\(d[\\\\\"edges\\\\\"]\\)} edges'\\)\")",
       "Bash(curl *)",
-      "Bash(findstr /C:\"search-input\" /C:\"dag-kb:expanded\" /C:\"chevron\" /C:\"data-node-id\" /C:\"selectMatch\")"
+      "Bash(findstr /C:\"search-input\" /C:\"dag-kb:expanded\" /C:\"chevron\" /C:\"data-node-id\" /C:\"selectMatch\")",
+      "Bash(kill %1)",
+      "Bash(wait)",
+      "Bash(netstat -ano)",
+      "Bash(node ./server.js)",
+      "Bash(disown)"
     ]
   }
 }
