@@ -244,5 +244,90 @@
     "target": "81284709-a028-4747-855b-55409b3121ca",
     "type": "contains",
     "primary": false
+  },
+  {
+    "source": "c64b9097-23e4-4e4a-87a0-aa356abdadcc",
+    "target": "01c67160-af26-4a3c-a589-ff5a9469dcfc",
+    "type": "states",
+    "primary": true
+  },
+  {
+    "source": "c64b9097-23e4-4e4a-87a0-aa356abdadcc",
+    "target": "9dacde78-712f-4fa4-a95b-650a737e6ece",
+    "type": "relates to",
+    "primary": true
+  },
+  {
+    "source": "9dacde78-712f-4fa4-a95b-650a737e6ece",
+    "target": "62552eb9-fd12-45ee-a2ab-3d33cb04159a",
+    "type": "states",
+    "primary": true
+  },
+  {
+    "source": "62552eb9-fd12-45ee-a2ab-3d33cb04159a",
+    "target": "01c67160-af26-4a3c-a589-ff5a9469dcfc",
+    "type": "implies",
+    "description": "The implicit RMF coverage is the stated reason why no dedicated NIST publication exists.",
+    "primary": false
+  },
+  {
+    "source": "46aa3aca-781f-44ad-a122-f64fbc602675",
+    "target": "258e099d-6595-47fb-89e2-8ff1e4dd1bf8",
+    "type": "contains",
+    "primary": true
+  },
+  {
+    "source": "cd2c294a-ca92-44ee-88f3-5ddea4fb678d",
+    "target": "258e099d-6595-47fb-89e2-8ff1e4dd1bf8",
+    "type": "contains",
+    "primary": false
+  },
+  {
+    "source": "46aa3aca-781f-44ad-a122-f64fbc602675",
+    "target": "ef5ef3b6-a977-4b61-b9b4-f7ae0337865f",
+    "type": "contains",
+    "primary": true
+  },
+  {
+    "source": "67f2cff4-3547-417d-bb90-b2098d3ae615",
+    "target": "ef5ef3b6-a977-4b61-b9b4-f7ae0337865f",
+    "type": "contains",
+    "primary": false
+  },
+  {
+    "source": "e24e3bad-f9d0-450e-823d-b2f255a92ec1",
+    "target": "2b1cb613-78e2-4cb8-bd13-d4ad16fe0196",
+    "type": "contains",
+    "primary": true
+  },
+  {
+    "source": "cd2c294a-ca92-44ee-88f3-5ddea4fb678d",
+    "target": "2b1cb613-78e2-4cb8-bd13-d4ad16fe0196",
+    "type": "contains",
+    "primary": false
+  },
+  {
+    "source": "e24e3bad-f9d0-450e-823d-b2f255a92ec1",
+    "target": "af0c388f-6b7f-4ebc-9f47-90732fb8c30b",
+    "type": "contains",
+    "primary": true
+  },
+  {
+    "source": "67f2cff4-3547-417d-bb90-b2098d3ae615",
+    "target": "af0c388f-6b7f-4ebc-9f47-90732fb8c30b",
+    "type": "contains",
+    "primary": false
+  },
+  {
+    "source": "0151705d-7004-416f-b734-7b7ccfc30de7",
+    "target": "f5ecb98d-5dfc-4c7c-84fe-c06409f0bc1f",
+    "type": "contains",
+    "primary": true
+  },
+  {
+    "source": "67f2cff4-3547-417d-bb90-b2098d3ae615",
+    "target": "f5ecb98d-5dfc-4c7c-84fe-c06409f0bc1f",
+    "type": "contains",
+    "primary": false
   }
 ]

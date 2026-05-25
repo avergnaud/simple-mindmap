@@ -337,5 +337,62 @@
     "synonyms": ["ISO/IEC 27003"],
     "description": "ISMS implementation guidance standard.",
     "types": ["descriptive"]
+  },
+  {
+    "id": "01c67160-af26-4a3c-a589-ff5a9469dcfc",
+    "title": "No dedicated NIST publication",
+    "synonyms": [
+      "Absence of a specific NIST publication",
+      "Not covered by a standalone NIST SP",
+      "No specific NIST SP for ISMS implementation"
+    ],
+    "description": "NIST does not publish a document specifically dedicated to ISMS implementation guidance.",
+    "types": ["descriptive"]
+  },
+  {
+    "id": "62552eb9-fd12-45ee-a2ab-3d33cb04159a",
+    "title": "Implicitly covers ISMS implementation guidance",
+    "synonyms": [
+      "Implicit ISMS coverage",
+      "ISMS guidance is implicit in RMF",
+      "Embeds ISMS implementation dimension"
+    ],
+    "description": "SP 800-37 (RMF) implicitly contains the ISMS implementation guidance dimension rather than addressing it in a separate publication.",
+    "types": ["descriptive"]
+  },
+  {
+    "id": "258e099d-6595-47fb-89e2-8ff1e4dd1bf8",
+    "title": "SP 800-55",
+    "synonyms": ["NIST SP 800-55", "Special Publication 800-55"],
+    "description": "NIST publication on security measurement and metrics.",
+    "types": ["descriptive"]
+  },
+  {
+    "id": "ef5ef3b6-a977-4b61-b9b4-f7ae0337865f",
+    "title": "ISO 27004",
+    "synonyms": ["ISO/IEC 27004"],
+    "description": "ISO/IEC standard on information security management measurement and metrics.",
+    "types": ["descriptive"]
+  },
+  {
+    "id": "2b1cb613-78e2-4cb8-bd13-d4ad16fe0196",
+    "title": "NIST IR 8286",
+    "synonyms": ["NISTIR 8286", "Interagency Report 8286"],
+    "description": "NIST publication on integrating cybersecurity and enterprise risk management.",
+    "types": ["descriptive"]
+  },
+  {
+    "id": "af0c388f-6b7f-4ebc-9f47-90732fb8c30b",
+    "title": "ISO 31000",
+    "synonyms": ["ISO 31000 Risk Management"],
+    "description": "ISO standard providing principles and guidelines for enterprise risk management.",
+    "types": ["descriptive"]
+  },
+  {
+    "id": "f5ecb98d-5dfc-4c7c-84fe-c06409f0bc1f",
+    "title": "ISO 27000",
+    "synonyms": ["ISO/IEC 27000"],
+    "description": "ISO/IEC standard providing the vocabulary and overview for the ISMS family of standards.",
+    "types": ["descriptive"]
   }
 ]
