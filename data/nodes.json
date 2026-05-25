@@ -9,7 +9,9 @@
       "CISSP Knowledge Domains"
     ],
     "description": "The eight domains defined by ISC² that make up the CISSP Common Body of Knowledge.",
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "6b817d69-c8ae-49f1-b081-9a91fb0886aa",
@@ -20,7 +22,9 @@
       "CISSP Domain 1"
     ],
     "description": "Covers foundational security concepts, risk management, governance, compliance, and ethics.",
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "477ee520-17f8-491e-b7e8-f038977f3a90",
@@ -31,7 +35,9 @@
       "CISSP Domain 2"
     ],
     "description": "Covers the classification, ownership, and protection of information and physical assets.",
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "a0546b59-9087-48ce-a227-6a91088762ec",
@@ -42,7 +48,9 @@
       "CISSP Domain 3"
     ],
     "description": "Covers secure design principles, security models, cryptography, and physical security.",
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "afa336b4-3a96-48a0-893e-b7f3fe918200",
@@ -53,7 +61,9 @@
       "CISSP Domain 4"
     ],
     "description": "Covers secure network architecture, transmission methods, and communication protocols.",
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "565699fa-d961-4a0e-8201-dfb50c263112",
@@ -64,7 +74,9 @@
       "CISSP Domain 5"
     ],
     "description": "Covers identification, authentication, authorization, and access control mechanisms.",
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "53e5f07d-9e57-487a-85cc-868ec37ab9c1",
@@ -75,7 +87,9 @@
       "CISSP Domain 6"
     ],
     "description": "Covers security assessments, penetration testing, audits, and logging and monitoring.",
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "7369bd89-f2cd-4187-ba00-54218fa14003",
@@ -86,7 +100,9 @@
       "CISSP Domain 7"
     ],
     "description": "Covers incident response, investigations, disaster recovery, and operational security.",
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "a62ce990-9c2c-46cd-8f6a-c2f4102c081a",
@@ -97,7 +113,9 @@
       "CISSP Domain 8"
     ],
     "description": "Covers secure coding practices, software development lifecycle security, and application security.",
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "1dbc17d5-c397-4cef-9bcb-e3583b408afe",
@@ -108,7 +126,9 @@
       "security frameworks"
     ],
     "description": "Structured models and standards used to guide security and risk management practices.",
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "f5a91382-c48c-4c56-a8ea-7a24feb8a4c8",
@@ -119,7 +139,9 @@
       "framework categories"
     ],
     "description": "The different categories or classifications of security and risk management frameworks.",
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "cd2c294a-ca92-44ee-88f3-5ddea4fb678d",
@@ -131,7 +153,9 @@
       "NIST RMF"
     ],
     "description": "US federal agency that publishes widely adopted cybersecurity and risk management frameworks.",
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "67f2cff4-3547-417d-bb90-b2098d3ae615",
@@ -143,7 +167,9 @@
       "ISO/IEC standards"
     ],
     "description": "International standards body publishing security management standards such as the ISO/IEC 27000 series.",
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "9753bdea-8611-4221-896c-f35f41b99a5e",
@@ -152,7 +178,9 @@
       "Voluntary framework",
       "Outcome-based framework"
     ],
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "4f545e47-9cd3-41fc-b5f2-25635e8f7105",
@@ -161,7 +189,9 @@
       "Certifiable ISMS",
       "Certifiable security management system"
     ],
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "ebeb721e-9f7a-4040-9a92-38e5fec43920",
@@ -171,7 +201,9 @@
       "InfoSec risk process",
       "IS risk management"
     ],
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "7dcd8f3e-90b3-4e08-b93d-82809d302d60",
@@ -180,7 +212,9 @@
       "Authorization lifecycle",
       "System ATO lifecycle"
     ],
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "b260a8b0-7271-445a-8715-3e2c8b8787d9",
@@ -189,7 +223,9 @@
       "Risk assessment approach",
       "Risk evaluation method"
     ],
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "fb5650d6-c2c2-470e-934c-a92fc9d86301",
@@ -199,7 +235,9 @@
       "Controls library",
       "Controls catalogue"
     ],
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "c64b9097-23e4-4e4a-87a0-aa356abdadcc",
@@ -208,7 +246,9 @@
       "ISMS guidance",
       "ISMS implementation guide"
     ],
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "46aa3aca-781f-44ad-a122-f64fbc602675",
@@ -218,7 +258,9 @@
       "Security measurement",
       "Metrics and measurement"
     ],
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "e24e3bad-f9d0-450e-823d-b2f255a92ec1",
@@ -228,7 +270,9 @@
       "Enterprise risk management",
       "All-risks ERM"
     ],
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "0151705d-7004-416f-b734-7b7ccfc30de7",
@@ -238,7 +282,9 @@
       "Terminology",
       "Definitions"
     ],
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "18374ced-5b4a-4706-b4b4-c57bea738aea",
@@ -249,7 +295,9 @@
       "Cybersecurity Framework 2.0"
     ],
     "description": "A voluntary outcome-based cybersecurity framework published by NIST.",
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "679dafe8-4041-46b7-aea7-0838b1336d62",
@@ -261,7 +309,9 @@
       "Information Security Management System"
     ],
     "description": "International standard specifying requirements for an Information Security Management System (ISMS), certifiable by accredited bodies.",
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "ff087fec-ca13-4fa3-9b47-c4d7cfa1be0f",
@@ -272,7 +322,9 @@
       "Managing Information Security Risk"
     ],
     "description": "A NIST Special Publication that defines an information security risk management process.",
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "5678fe5d-c08e-4dc8-8fdf-bfcc2a91e3d2",
@@ -282,7 +334,9 @@
       "ISO 27005 Information Security Risk Management"
     ],
     "description": "An ISO/IEC standard defining an information security risk management process.",
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "9dacde78-712f-4fa4-a95b-650a737e6ece",
@@ -294,7 +348,9 @@
       "Risk Management Framework"
     ],
     "description": "A NIST Special Publication defining the Risk Management Framework, a system authorization lifecycle.",
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "9053266d-152f-4b91-9b8a-712b5d690ba4",
@@ -305,7 +361,9 @@
       "SP 800-30"
     ],
     "description": "A NIST Special Publication defining a risk assessment methodology.",
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "405af00a-783c-40fd-8a43-c8716f37ed82",
@@ -315,28 +373,46 @@
       "Methodology-agnostic",
       "No mandated methodology"
     ],
-    "types": ["descriptive", "illustrative"]
+    "types": [
+      "descriptive",
+      "illustrative"
+    ]
   },
   {
     "id": "5cd2ebb2-9a98-4072-8f4d-ef75ea103e72",
     "title": "SP 800-53",
-    "synonyms": ["NIST SP 800-53", "NIST Special Publication 800-53", "800-53"],
+    "synonyms": [
+      "NIST SP 800-53",
+      "NIST Special Publication 800-53",
+      "800-53"
+    ],
     "description": "NIST Special Publication 800-53, a catalog of security and privacy controls for U.S. federal information systems.",
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "70ea50f4-0099-4b24-8df9-258f030dce5c",
     "title": "ISO 27002",
-    "synonyms": ["ISO/IEC 27002", "27002"],
+    "synonyms": [
+      "ISO/IEC 27002",
+      "27002"
+    ],
     "description": "ISO/IEC 27002, a code of practice that catalogs information security controls.",
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "81284709-a028-4747-855b-55409b3121ca",
     "title": "ISO 27003",
-    "synonyms": ["ISO/IEC 27003"],
+    "synonyms": [
+      "ISO/IEC 27003"
+    ],
     "description": "ISMS implementation guidance standard.",
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "01c67160-af26-4a3c-a589-ff5a9469dcfc",
@@ -347,7 +423,9 @@
       "No specific NIST SP for ISMS implementation"
     ],
     "description": "NIST does not publish a document specifically dedicated to ISMS implementation guidance.",
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "62552eb9-fd12-45ee-a2ab-3d33cb04159a",
@@ -358,41 +436,618 @@
       "Embeds ISMS implementation dimension"
     ],
     "description": "SP 800-37 (RMF) implicitly contains the ISMS implementation guidance dimension rather than addressing it in a separate publication.",
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "258e099d-6595-47fb-89e2-8ff1e4dd1bf8",
     "title": "SP 800-55",
-    "synonyms": ["NIST SP 800-55", "Special Publication 800-55"],
+    "synonyms": [
+      "NIST SP 800-55",
+      "Special Publication 800-55"
+    ],
     "description": "NIST publication on security measurement and metrics.",
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "ef5ef3b6-a977-4b61-b9b4-f7ae0337865f",
     "title": "ISO 27004",
-    "synonyms": ["ISO/IEC 27004"],
+    "synonyms": [
+      "ISO/IEC 27004"
+    ],
     "description": "ISO/IEC standard on information security management measurement and metrics.",
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "2b1cb613-78e2-4cb8-bd13-d4ad16fe0196",
     "title": "NIST IR 8286",
-    "synonyms": ["NISTIR 8286", "Interagency Report 8286"],
+    "synonyms": [
+      "NISTIR 8286",
+      "Interagency Report 8286"
+    ],
     "description": "NIST publication on integrating cybersecurity and enterprise risk management.",
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "af0c388f-6b7f-4ebc-9f47-90732fb8c30b",
     "title": "ISO 31000",
-    "synonyms": ["ISO 31000 Risk Management"],
+    "synonyms": [
+      "ISO 31000 Risk Management"
+    ],
     "description": "ISO standard providing principles and guidelines for enterprise risk management.",
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
   },
   {
     "id": "f5ecb98d-5dfc-4c7c-84fe-c06409f0bc1f",
     "title": "ISO 27000",
-    "synonyms": ["ISO/IEC 27000"],
+    "synonyms": [
+      "ISO/IEC 27000"
+    ],
     "description": "ISO/IEC standard providing the vocabulary and overview for the ISMS family of standards.",
-    "types": ["descriptive"]
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "e7bf71a5-6149-4f4b-b48f-f0292402ad4a",
+    "title": "Core",
+    "synonyms": [
+      "CSF Core",
+      "Framework Core"
+    ],
+    "description": "Component of NIST CSF 2.0 that organizes cybersecurity outcomes into functions.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "03e3cb22-43d7-448a-8561-f1b4a3a7a3a9",
+    "title": "Tiers",
+    "synonyms": [
+      "Implementation Tiers",
+      "Maturity Tiers",
+      "Tiers de maturité"
+    ],
+    "description": "Component of NIST CSF 2.0 describing the rigor of cybersecurity risk management practices.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "6332bb0d-2174-46f1-bd5d-b6bece568cc1",
+    "title": "Profiles",
+    "synonyms": [
+      "CSF Profiles",
+      "Framework Profiles"
+    ],
+    "description": "Component of NIST CSF 2.0 used to measure the gap between current and desired cybersecurity states.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "f490639c-b22c-45db-89e2-838693d88025",
+    "title": "Govern",
+    "synonyms": [
+      "GV",
+      "Govern function"
+    ],
+    "description": "First function of the CSF Core, covering cybersecurity governance.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "d3c96515-afd1-4d76-b228-09ac176ce3c1",
+    "title": "Identify",
+    "synonyms": [
+      "ID",
+      "Identify function"
+    ],
+    "description": "CSF Core function focused on understanding assets, risks, and context.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "cb041be5-f2d5-49ef-96d6-3b756335fd2e",
+    "title": "Protect",
+    "synonyms": [
+      "PR",
+      "Protect function"
+    ],
+    "description": "CSF Core function covering safeguards to ensure delivery of critical services.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "ad7a6b22-d247-4ce7-aa62-da8210efb85e",
+    "title": "Detect",
+    "synonyms": [
+      "DE",
+      "Detect function"
+    ],
+    "description": "CSF Core function for identifying cybersecurity events in a timely manner.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "f5d4c734-789a-4239-900c-1c8f7eaa2ed3",
+    "title": "Respond",
+    "synonyms": [
+      "RS",
+      "Respond function"
+    ],
+    "description": "CSF Core function covering actions taken upon detection of a cybersecurity incident.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "393eec04-7b2e-44af-86a9-607f86b3fa1f",
+    "title": "Recover",
+    "synonyms": [
+      "RC",
+      "Recover function"
+    ],
+    "description": "CSF Core function focused on restoring capabilities or services impaired by an incident.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "a53702b7-4bbf-47d6-ab6a-da20f32496c5",
+    "title": "Tier 1 - Partial",
+    "synonyms": [
+      "Partial",
+      "Tier 1"
+    ],
+    "description": "Lowest CSF maturity tier with ad hoc and reactive risk management practices.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "5819792b-4e48-4c2a-9342-9b0d58fc26d5",
+    "title": "Tier 2 - Risk-Informed",
+    "synonyms": [
+      "Risk-Informed",
+      "Tier 2"
+    ],
+    "description": "CSF maturity tier where risk management practices are approved by management but not organization-wide.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "d5dc084f-50c3-45f5-86bf-a28f6dbdcee5",
+    "title": "Tier 3 - Repeatable",
+    "synonyms": [
+      "Repeatable",
+      "Tier 3"
+    ],
+    "description": "CSF maturity tier with formally approved, organization-wide risk management practices.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "8865e952-88a2-443d-ae93-e22f82022e2c",
+    "title": "Tier 4 - Adaptive",
+    "synonyms": [
+      "Adaptive",
+      "Tier 4"
+    ],
+    "description": "Highest CSF maturity tier with continuous improvement based on lessons learned and predictive indicators.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "0d548f4c-953d-4616-b398-4bc55cf001fb",
+    "title": "Current Profile",
+    "synonyms": [
+      "As-Is Profile"
+    ],
+    "description": "Profile representing the organization's current state against CSF Core functions and categories.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "3f9972e9-119c-4e16-b41a-619b4f7d011e",
+    "title": "Target Profile",
+    "synonyms": [
+      "To-Be Profile",
+      "Desired Profile"
+    ],
+    "description": "Profile representing the desired cybersecurity state, aligned with business objectives and risk appetite.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "fb08d7b0-7942-4863-a6b3-5755f07086ae",
+    "title": "Organizational Context",
+    "synonyms": [
+      "Business context",
+      "Organizational mission and stakeholders"
+    ],
+    "description": "Establishing the organization's mission, stakeholders, and external dependencies as input to cybersecurity governance.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "4097cbb7-f0b4-4a00-bdd7-f097e2df7f0d",
+    "title": "Cybersecurity Risk Management Strategy",
+    "synonyms": [
+      "Cyber risk strategy",
+      "Risk management strategy"
+    ],
+    "description": "Organization-wide strategy defining how cybersecurity risk is identified, prioritized, and treated.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "138852d4-1abf-40e8-b416-24cabc416875",
+    "title": "Risk Appetite and Tolerance",
+    "synonyms": [
+      "Risk appetite",
+      "Risk tolerance"
+    ],
+    "description": "The level of risk the organization is willing to accept (appetite) and the acceptable deviation from it (tolerance).",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "82ba2980-624b-407c-bacb-c94900fa76a7",
+    "title": "ERM Integration",
+    "synonyms": [
+      "Enterprise Risk Management integration",
+      "Integration into ERM"
+    ],
+    "description": "Embedding cybersecurity risk into the broader Enterprise Risk Management program.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "c279bd43-1299-41ef-98f8-90bcedbb2932",
+    "title": "Supply Chain Risk Management",
+    "synonyms": [
+      "SCRM",
+      "C-SCRM",
+      "Cybersecurity supply chain risk management"
+    ],
+    "description": "Managing cybersecurity risk that arises from suppliers, vendors, and third-party dependencies.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "1876f972-a22d-4a35-ac69-fbc8b23c6d2b",
+    "title": "Cybersecurity Culture",
+    "synonyms": [
+      "Security culture",
+      "Organizational security culture"
+    ],
+    "description": "The shared values, behaviors, and awareness that shape how an organization treats cybersecurity.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "169136d7-b9d7-4229-a336-498cf36e1297",
+    "title": "Added in NIST CSF v2.0 as cross-cutting function",
+    "synonyms": [
+      "New in CSF 2.0",
+      "Cross-cutting function"
+    ],
+    "description": "GOVERN is the function newly introduced in NIST CSF v2.0 and applies across all other functions.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "cc81c5c8-963c-46da-bd26-9bf6be279a42",
+    "title": "Improvement category moved from IDENTIFY in v2.0",
+    "synonyms": [
+      "Improvement relocation",
+      "Continuous improvement under GOVERN"
+    ],
+    "description": "Continuous improvement was previously under IDENTIFY in CSF v1.x and was relocated to GOVERN in v2.0.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "9d58aec1-99c3-4f2c-a266-365762cbd9a0",
+    "title": "Asset Inventory",
+    "synonyms": [
+      "Asset management",
+      "Inventory of hardware software data and people"
+    ],
+    "description": "Cataloging hardware, software, data, and personnel assets that the organization must protect.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "92a3265f-daa4-41d0-bdbd-3c69798177ba",
+    "title": "Critical Business Process Mapping",
+    "synonyms": [
+      "Business process mapping",
+      "Critical processes"
+    ],
+    "description": "Identifying and mapping the business processes whose disruption would most affect the organization.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "07517423-9932-43c6-8bad-4b5c26362f33",
+    "title": "Risk Assessment",
+    "synonyms": [
+      "Cyber risk assessment",
+      "Risk analysis"
+    ],
+    "description": "Evaluating the likelihood and impact of cybersecurity risks to the organization.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "3a0a7c07-419e-41dd-8240-626459841367",
+    "title": "Threat and Vulnerability Identification",
+    "synonyms": [
+      "Threat identification",
+      "Vulnerability identification"
+    ],
+    "description": "Identifying threats facing the organization and vulnerabilities in its assets and processes.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "c78a19c4-faff-44a8-a4b0-20ec3447cb84",
+    "title": "Access Control (CSF)",
+    "synonyms": [
+      "PR.AA",
+      "CSF Access Control"
+    ],
+    "description": "NIST CSF PROTECT category covering access control, identity, and authentication.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "2887cde7-0880-47ce-84cb-d19de9180148",
+    "title": "Awareness and Training",
+    "synonyms": [
+      "Security awareness",
+      "User training"
+    ],
+    "description": "Educating personnel on cybersecurity responsibilities, threats, and safe behaviors.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "ffab8989-5042-4cb2-8125-5ee3329347af",
+    "title": "Data Security",
+    "synonyms": [
+      "Encryption and DLP",
+      "Data protection"
+    ],
+    "description": "Protecting data confidentiality, integrity, and availability via mechanisms such as encryption and DLP.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "fed2d9be-9a2c-4804-a908-c536b6db2f10",
+    "title": "Protective Processes and Procedures",
+    "synonyms": [
+      "Security processes and procedures",
+      "Information protection processes"
+    ],
+    "description": "Documented processes and procedures used to protect systems and data.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "77afb471-af9d-4abd-bbb0-ff684232ba01",
+    "title": "Maintenance",
+    "synonyms": [
+      "System maintenance",
+      "Operational maintenance"
+    ],
+    "description": "Performing maintenance and repair of systems consistent with security policies.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "3c80885d-559f-4529-a072-fd1b8feb6fc4",
+    "title": "Technology Platform Security",
+    "synonyms": [
+      "Platform security",
+      "Protective technology"
+    ],
+    "description": "Hardening and securing the technology platforms that host applications and data.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "ee9bfdfe-6d51-4ab0-955f-95ad9b83d244",
+    "title": "Continuous Monitoring",
+    "synonyms": [
+      "Security continuous monitoring",
+      "ISCM"
+    ],
+    "description": "Ongoing observation of systems and networks to detect cybersecurity events.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "a661c5e4-e2c6-491b-8616-2cabe311eb53",
+    "title": "Anomaly and Event Analysis",
+    "synonyms": [
+      "Anomaly detection",
+      "Event analysis"
+    ],
+    "description": "Analyzing anomalies and events to determine whether they represent security incidents.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "193ae8e4-103b-46bc-99dd-9282176436e6",
+    "title": "Detection Processes",
+    "synonyms": [
+      "SIEM IDS IPS SOC",
+      "Detection capabilities"
+    ],
+    "description": "Processes and technology (SIEM, IDS/IPS, SOC) that implement the detection capability.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "c617071f-6a13-45ec-8a9e-f92982ac3cd8",
+    "title": "Dwell time is a critical performance indicator",
+    "synonyms": [
+      "Dwell time KPI",
+      "Time between compromise and detection"
+    ],
+    "description": "The gap between compromise and detection is a critical KPI for measuring detection effectiveness.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "c6544a09-75d5-4f9f-a114-362bf1ef2d26",
+    "title": "Response Planning",
+    "synonyms": [
+      "Incident response plan",
+      "IR planning"
+    ],
+    "description": "Pre-defined plans that govern how the organization responds to incidents.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "4ab472d1-dd96-4aa4-a47c-d09fd9906e66",
+    "title": "Incident Communications",
+    "synonyms": [
+      "Internal and external communications",
+      "Regulatory notification"
+    ],
+    "description": "Internal and external communications during an incident, including regulatory notification obligations.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "038c9dcf-f064-44b7-bbc2-10ce2c3aa870",
+    "title": "Forensic Analysis",
+    "synonyms": [
+      "Digital forensics",
+      "Incident analysis"
+    ],
+    "description": "Investigation of an incident's scope, cause, and impact through forensic techniques.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "dd712ddd-0eab-47bb-9da7-2fd5a1df667f",
+    "title": "Mitigation",
+    "synonyms": [
+      "Incident mitigation",
+      "Containment and mitigation"
+    ],
+    "description": "Actions taken to contain an incident and reduce its impact.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "b2ab9754-8e73-478e-9e63-bf691e4c22dd",
+    "title": "Post-Incident Improvement",
+    "synonyms": [
+      "Lessons learned",
+      "Improvements from incidents"
+    ],
+    "description": "Updating response capabilities based on lessons learned from prior incidents.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "8911d023-59a5-42a3-b569-105cdb567011",
+    "title": "Recovery Planning",
+    "synonyms": [
+      "Recovery plan",
+      "Disaster recovery planning"
+    ],
+    "description": "Pre-defined plans for restoring systems and services after an incident.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "0fd3384d-0e9e-493c-8ecf-aabfd06113ed",
+    "title": "Plan Improvement from Lessons Learned",
+    "synonyms": [
+      "Recovery improvements",
+      "Lessons-learned-driven plan updates"
+    ],
+    "description": "Updating recovery plans based on lessons learned from incidents and exercises.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "feb37728-83f6-4f5e-bc7b-8c0c3e899793",
+    "title": "Recovery Communication",
+    "synonyms": [
+      "Communications during recovery",
+      "Recovery stakeholder communication"
+    ],
+    "description": "Coordinating communication with stakeholders during recovery activities.",
+    "types": [
+      "descriptive"
+    ]
+  },
+  {
+    "id": "a04cefc9-727b-4ce3-a68f-d87c4d091cad",
+    "title": "Goal is returning to operations within RTO/RPO from BIA",
+    "synonyms": [
+      "RTO and RPO thresholds",
+      "Return to normal operations"
+    ],
+    "description": "Recovery aims to return the organization to normal operations within the RTO/RPO thresholds defined in the Business Impact Analysis.",
+    "types": [
+      "descriptive"
+    ]
   }
 ]
