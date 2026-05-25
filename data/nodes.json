@@ -330,5 +330,12 @@
     "synonyms": ["ISO/IEC 27002", "27002"],
     "description": "ISO/IEC 27002, a code of practice that catalogs information security controls.",
     "types": ["descriptive"]
+  },
+  {
+    "id": "81284709-a028-4747-855b-55409b3121ca",
+    "title": "ISO 27003",
+    "synonyms": ["ISO/IEC 27003"],
+    "description": "ISMS implementation guidance standard.",
+    "types": ["descriptive"]
   }
 ]

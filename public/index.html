@@ -35,6 +35,16 @@
       transition: background 0.4s ease;
       border-radius: 3px;
     }
+    .chevron {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 1rem; height: 1rem;
+      font-size: 0.65rem; color: #666;
+      cursor: pointer; user-select: none;
+    }
+    .chevron:hover { color: #000; }
+    .chevron-placeholder {
+      display: inline-block; width: 1rem; height: 1rem;
+    }
     .add-form {
       display: flex; gap: 0.4rem; align-items: center;
       margin: 0.3rem 0 0.3rem 0.2rem; flex-wrap: wrap;
@@ -50,19 +60,97 @@
       border: 1px solid #bbb; border-radius: 3px; background: #fff;
     }
     .empty { color: #888; font-size: 0.9rem; }
+    #search-wrap {
+      position: relative; display: inline-block;
+    }
+    #search-input {
+      font-size: 0.9rem; padding: 0.3rem 1.6rem 0.3rem 0.5rem;
+      border: 1px solid #bbb; border-radius: 3px; width: 18rem;
+    }
+    #search-clear {
+      position: absolute; top: 50%; right: 0.3rem;
+      transform: translateY(-50%);
+      font-size: 0.7rem; padding: 0.05rem 0.3rem;
+      line-height: 1;
+    }
+    #search-dropdown {
+      position: absolute; top: 100%; left: 0;
+      width: 18rem;
+      max-height: 18rem; overflow-y: auto;
+      background: #fff; border: 1px solid #ccc; border-radius: 3px;
+      padding: 0; margin: 0.15rem 0 0 0;
+      z-index: 10; display: none;
+    }
+    #search-dropdown li {
+      padding: 0.3rem 0.5rem; margin: 0;
+      cursor: pointer; font-size: 0.9rem;
+      list-style: none;
+    }
+    #search-dropdown li:hover, #search-dropdown li.active {
+      background: #f0f0f0;
+    }
+    #toolbar {
+      display: flex; align-items: center; gap: 0.6rem;
+      margin: 0 0 1rem 0; flex-wrap: wrap;
+    }
+    #toolbar button {
+      font-size: 0.8rem; padding: 0.3rem 0.6rem;
+    }
   </style>
 </head>
 <body>
   <h1>DAG KB</h1>
+  <div id="toolbar">
+    <div id="search-wrap">
+      <input id="search-input" type="text" placeholder="Search…" autocomplete="off" />
+      <button id="search-clear" type="button" title="Clear">✕</button>
+      <ul id="search-dropdown"></ul>
+    </div>
+    <button id="btn-expand-all" type="button" title="Expand every node">Expand all</button>
+    <button id="btn-collapse-all" type="button" title="Collapse to root + level 1">Collapse all</button>
+  </div>
   <div id="tree"></div>
 
   <script>
     let graph = { nodes: [], edges: [] };
+    const STORAGE_KEY = 'dag-kb:expanded';
+    let expandedSet = new Set();
+    let activeDropdownIndex = -1;
+
+    function loadExpandedSet() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (raw == null) return null;
+        const arr = JSON.parse(raw);
+        if (!Array.isArray(arr)) return null;
+        return new Set(arr);
+      } catch { return null; }
+    }
+
+    function persistExpandedSet() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify([...expandedSet]));
+    }
+
+    function computeRoots() {
+      const primaryTargets = new Set(graph.edges.filter(e => e.primary).map(e => e.target));
+      return graph.nodes.filter(n => !primaryTargets.has(n.id));
+    }
 
     async function load() {
       const res = await fetch('/api/graph');
       graph = await res.json();
+
+      const nodeIds = new Set(graph.nodes.map(n => n.id));
+      const persisted = loadExpandedSet();
+      if (persisted == null) {
+        expandedSet = new Set(computeRoots().map(r => r.id));
+      } else {
+        expandedSet = new Set([...persisted].filter(id => nodeIds.has(id)));
+      }
+      persistExpandedSet();
+
       render();
+      updateSearchDropdown();
     }
 
     function render() {
@@ -72,12 +160,9 @@
         return;
       }
 
-      const primaryTargets = new Set(graph.edges.filter(e => e.primary).map(e => e.target));
-      const roots = graph.nodes.filter(n => !primaryTargets.has(n.id));
-
       const ul = document.createElement('ul');
       ul.className = 'root';
-      for (const root of roots) ul.appendChild(renderNode(root));
+      for (const root of computeRoots()) ul.appendChild(renderNode(root));
       container.innerHTML = '';
       container.appendChild(ul);
     }
@@ -85,10 +170,42 @@
     function renderNode(node) {
       const li = document.createElement('li');
       li.id = `node-${node.id}`;
+      li.dataset.nodeId = node.id;
       if (node.types?.includes('illustrative')) li.classList.add('illustrative');
 
       const row = document.createElement('div');
       row.className = 'node-row';
+
+      const primaryChildren = graph.edges
+        .filter(e => e.source === node.id && e.primary)
+        .map(e => graph.nodes.find(n => n.id === e.target))
+        .filter(Boolean);
+
+      const secondaryChildren = graph.edges
+        .filter(e => e.source === node.id && !e.primary)
+        .map(e => graph.nodes.find(n => n.id === e.target))
+        .filter(Boolean);
+
+      const hasChildren = primaryChildren.length > 0 || secondaryChildren.length > 0;
+      const isExpanded = expandedSet.has(node.id);
+
+      if (hasChildren) {
+        const chevron = document.createElement('span');
+        chevron.className = 'chevron';
+        chevron.textContent = isExpanded ? '▼' : '▶';
+        chevron.title = isExpanded ? 'Collapse' : 'Expand';
+        chevron.onclick = () => {
+          if (expandedSet.has(node.id)) expandedSet.delete(node.id);
+          else expandedSet.add(node.id);
+          persistExpandedSet();
+          render();
+        };
+        row.appendChild(chevron);
+      } else {
+        const placeholder = document.createElement('span');
+        placeholder.className = 'chevron-placeholder';
+        row.appendChild(placeholder);
+      }
 
       const title = document.createElement('span');
       title.className = 'node-title';
@@ -123,17 +240,7 @@
 
       li.appendChild(row);
 
-      const primaryChildren = graph.edges
-        .filter(e => e.source === node.id && e.primary)
-        .map(e => graph.nodes.find(n => n.id === e.target))
-        .filter(Boolean);
-
-      const secondaryChildren = graph.edges
-        .filter(e => e.source === node.id && !e.primary)
-        .map(e => graph.nodes.find(n => n.id === e.target))
-        .filter(Boolean);
-
-      if (primaryChildren.length || secondaryChildren.length) {
+      if (hasChildren && isExpanded) {
         const ul = document.createElement('ul');
         for (const child of primaryChildren) ul.appendChild(renderNode(child));
         for (const child of secondaryChildren) ul.appendChild(renderGhost(child));
@@ -146,6 +253,7 @@
     function renderGhost(node) {
       const li = document.createElement('li');
       li.className = 'ghost';
+      li.dataset.nodeId = node.id;
       if (node.types?.includes('illustrative')) li.classList.add('illustrative');
 
       const row = document.createElement('div');
@@ -227,6 +335,153 @@
       row.after(form);
       titleInput.focus();
     }
+
+    // --- Search ---
+
+    const searchInput = document.getElementById('search-input');
+    const searchDropdown = document.getElementById('search-dropdown');
+    const searchClear = document.getElementById('search-clear');
+
+    function getMatches(query) {
+      const q = query.trim().toLowerCase();
+      if (!q) return [];
+      const out = [];
+      for (const n of graph.nodes) {
+        if (n.title.toLowerCase().includes(q)) {
+          out.push(n);
+          if (out.length >= 20) break;
+        }
+      }
+      return out;
+    }
+
+    function updateSearchDropdown() {
+      const q = searchInput.value;
+      const matches = getMatches(q);
+      const focused = document.activeElement === searchInput;
+
+      if (!q.trim() || !focused || matches.length === 0) {
+        searchDropdown.style.display = 'none';
+        searchDropdown.innerHTML = '';
+        activeDropdownIndex = -1;
+        return;
+      }
+
+      searchDropdown.innerHTML = '';
+      matches.forEach((m, i) => {
+        const li = document.createElement('li');
+        li.textContent = m.title;
+        li.dataset.nodeId = m.id;
+        if (i === activeDropdownIndex) li.classList.add('active');
+        li.addEventListener('mousedown', e => {
+          e.preventDefault();
+          selectMatch(m.id);
+        });
+        searchDropdown.appendChild(li);
+      });
+      searchDropdown.style.display = 'block';
+    }
+
+    function buildPrimaryParentMap() {
+      const map = new Map();
+      for (const e of graph.edges) if (e.primary) map.set(e.target, e.source);
+      return map;
+    }
+
+    function selectMatch(matchedId) {
+      const primaryParentMap = buildPrimaryParentMap();
+      const directParents = graph.edges
+        .filter(e => e.target === matchedId)
+        .map(e => e.source);
+
+      for (const p of directParents) {
+        expandedSet.add(p);
+        let cur = primaryParentMap.get(p);
+        const seen = new Set();
+        while (cur && !seen.has(cur)) {
+          seen.add(cur);
+          expandedSet.add(cur);
+          cur = primaryParentMap.get(cur);
+        }
+      }
+      persistExpandedSet();
+
+      searchDropdown.style.display = 'none';
+      searchDropdown.innerHTML = '';
+      activeDropdownIndex = -1;
+      searchInput.blur();
+
+      render();
+
+      const canonical = document.getElementById(`node-${matchedId}`);
+      if (canonical) canonical.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      const occurrences = document.querySelectorAll(`[data-node-id="${matchedId}"]`);
+      occurrences.forEach(el => el.classList.add('highlight'));
+      setTimeout(() => {
+        occurrences.forEach(el => el.classList.remove('highlight'));
+      }, 1000);
+    }
+
+    searchInput.addEventListener('input', () => {
+      activeDropdownIndex = -1;
+      updateSearchDropdown();
+    });
+    searchInput.addEventListener('focus', updateSearchDropdown);
+    searchInput.addEventListener('blur', () => {
+      setTimeout(() => {
+        if (document.activeElement !== searchInput) {
+          searchDropdown.style.display = 'none';
+        }
+      }, 150);
+    });
+    searchInput.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        searchInput.value = '';
+        searchDropdown.style.display = 'none';
+        searchDropdown.innerHTML = '';
+        activeDropdownIndex = -1;
+        searchInput.blur();
+      } else if (e.key === 'Enter') {
+        const matches = getMatches(searchInput.value);
+        if (!matches.length) return;
+        const idx = activeDropdownIndex >= 0 ? activeDropdownIndex : 0;
+        selectMatch(matches[idx].id);
+      } else if (e.key === 'ArrowDown') {
+        const matches = getMatches(searchInput.value);
+        if (!matches.length) return;
+        e.preventDefault();
+        activeDropdownIndex = (activeDropdownIndex + 1) % matches.length;
+        updateSearchDropdown();
+      } else if (e.key === 'ArrowUp') {
+        const matches = getMatches(searchInput.value);
+        if (!matches.length) return;
+        e.preventDefault();
+        activeDropdownIndex = (activeDropdownIndex - 1 + matches.length) % matches.length;
+        updateSearchDropdown();
+      }
+    });
+
+    searchClear.addEventListener('click', () => {
+      searchInput.value = '';
+      searchDropdown.style.display = 'none';
+      searchDropdown.innerHTML = '';
+      activeDropdownIndex = -1;
+      searchInput.focus();
+    });
+
+    document.getElementById('btn-expand-all').addEventListener('click', () => {
+      const withChildren = new Set(graph.edges.map(e => e.source));
+      expandedSet = new Set([...withChildren].filter(id => graph.nodes.some(n => n.id === id)));
+      persistExpandedSet();
+      render();
+    });
+
+    document.getElementById('btn-collapse-all').addEventListener('click', () => {
+      expandedSet = new Set(computeRoots().map(r => r.id));
+      persistExpandedSet();
+      render();
+    });
 
     load();
   </script>
