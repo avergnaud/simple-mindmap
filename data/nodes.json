@@ -8,7 +8,8 @@
       "ISC2 Domains",
       "CISSP Knowledge Domains"
     ],
-    "description": "The eight domains defined by ISC² that make up the CISSP Common Body of Knowledge."
+    "description": "The eight domains defined by ISC² that make up the CISSP Common Body of Knowledge.",
+    "types": ["descriptive"]
   },
   {
     "id": "6b817d69-c8ae-49f1-b081-9a91fb0886aa",
@@ -18,7 +19,8 @@
       "Risk Management",
       "CISSP Domain 1"
     ],
-    "description": "Covers foundational security concepts, risk management, governance, compliance, and ethics."
+    "description": "Covers foundational security concepts, risk management, governance, compliance, and ethics.",
+    "types": ["descriptive"]
   },
   {
     "id": "477ee520-17f8-491e-b7e8-f038977f3a90",
@@ -28,7 +30,8 @@
       "Information Asset Management",
       "CISSP Domain 2"
     ],
-    "description": "Covers the classification, ownership, and protection of information and physical assets."
+    "description": "Covers the classification, ownership, and protection of information and physical assets.",
+    "types": ["descriptive"]
   },
   {
     "id": "a0546b59-9087-48ce-a227-6a91088762ec",
@@ -38,7 +41,8 @@
       "Security Architecture",
       "CISSP Domain 3"
     ],
-    "description": "Covers secure design principles, security models, cryptography, and physical security."
+    "description": "Covers secure design principles, security models, cryptography, and physical security.",
+    "types": ["descriptive"]
   },
   {
     "id": "afa336b4-3a96-48a0-893e-b7f3fe918200",
@@ -48,7 +52,8 @@
       "Network Security",
       "CISSP Domain 4"
     ],
-    "description": "Covers secure network architecture, transmission methods, and communication protocols."
+    "description": "Covers secure network architecture, transmission methods, and communication protocols.",
+    "types": ["descriptive"]
   },
   {
     "id": "565699fa-d961-4a0e-8201-dfb50c263112",
@@ -58,7 +63,8 @@
       "IAM",
       "CISSP Domain 5"
     ],
-    "description": "Covers identification, authentication, authorization, and access control mechanisms."
+    "description": "Covers identification, authentication, authorization, and access control mechanisms.",
+    "types": ["descriptive"]
   },
   {
     "id": "53e5f07d-9e57-487a-85cc-868ec37ab9c1",
@@ -68,7 +74,8 @@
       "Security Testing",
       "CISSP Domain 6"
     ],
-    "description": "Covers security assessments, penetration testing, audits, and logging and monitoring."
+    "description": "Covers security assessments, penetration testing, audits, and logging and monitoring.",
+    "types": ["descriptive"]
   },
   {
     "id": "7369bd89-f2cd-4187-ba00-54218fa14003",
@@ -78,7 +85,8 @@
       "SecOps",
       "CISSP Domain 7"
     ],
-    "description": "Covers incident response, investigations, disaster recovery, and operational security."
+    "description": "Covers incident response, investigations, disaster recovery, and operational security.",
+    "types": ["descriptive"]
   },
   {
     "id": "a62ce990-9c2c-46cd-8f6a-c2f4102c081a",
@@ -88,7 +96,8 @@
       "Secure Software Development",
       "CISSP Domain 8"
     ],
-    "description": "Covers secure coding practices, software development lifecycle security, and application security."
+    "description": "Covers secure coding practices, software development lifecycle security, and application security.",
+    "types": ["descriptive"]
   },
   {
     "id": "1dbc17d5-c397-4cef-9bcb-e3583b408afe",
@@ -98,7 +107,8 @@
       "risk management frameworks",
       "security frameworks"
     ],
-    "description": "Structured models and standards used to guide security and risk management practices."
+    "description": "Structured models and standards used to guide security and risk management practices.",
+    "types": ["descriptive"]
   },
   {
     "id": "f5a91382-c48c-4c56-a8ea-7a24feb8a4c8",
@@ -108,7 +118,8 @@
       "security framework categories",
       "framework categories"
     ],
-    "description": "The different categories or classifications of security and risk management frameworks."
+    "description": "The different categories or classifications of security and risk management frameworks.",
+    "types": ["descriptive"]
   },
   {
     "id": "cd2c294a-ca92-44ee-88f3-5ddea4fb678d",
@@ -119,7 +130,8 @@
       "NIST CSF",
       "NIST RMF"
     ],
-    "description": "US federal agency that publishes widely adopted cybersecurity and risk management frameworks."
+    "description": "US federal agency that publishes widely adopted cybersecurity and risk management frameworks.",
+    "types": ["descriptive"]
   },
   {
     "id": "67f2cff4-3547-417d-bb90-b2098d3ae615",
@@ -130,7 +142,8 @@
       "International Organization for Standardization",
       "ISO/IEC standards"
     ],
-    "description": "International standards body publishing security management standards such as the ISO/IEC 27000 series."
+    "description": "International standards body publishing security management standards such as the ISO/IEC 27000 series.",
+    "types": ["descriptive"]
   },
   {
     "id": "9753bdea-8611-4221-896c-f35f41b99a5e",
@@ -138,7 +151,8 @@
     "synonyms": [
       "Voluntary framework",
       "Outcome-based framework"
-    ]
+    ],
+    "types": ["descriptive"]
   },
   {
     "id": "4f545e47-9cd3-41fc-b5f2-25635e8f7105",
@@ -146,7 +160,8 @@
     "synonyms": [
       "Certifiable ISMS",
       "Certifiable security management system"
-    ]
+    ],
+    "types": ["descriptive"]
   },
   {
     "id": "ebeb721e-9f7a-4040-9a92-38e5fec43920",
@@ -155,7 +170,8 @@
       "Information security risk management",
       "InfoSec risk process",
       "IS risk management"
-    ]
+    ],
+    "types": ["descriptive"]
   },
   {
     "id": "7dcd8f3e-90b3-4e08-b93d-82809d302d60",
@@ -163,7 +179,8 @@
     "synonyms": [
       "Authorization lifecycle",
       "System ATO lifecycle"
-    ]
+    ],
+    "types": ["descriptive"]
   },
   {
     "id": "b260a8b0-7271-445a-8715-3e2c8b8787d9",
@@ -171,7 +188,8 @@
     "synonyms": [
       "Risk assessment approach",
       "Risk evaluation method"
-    ]
+    ],
+    "types": ["descriptive"]
   },
   {
     "id": "fb5650d6-c2c2-470e-934c-a92fc9d86301",
@@ -180,7 +198,8 @@
       "Security control catalog",
       "Controls library",
       "Controls catalogue"
-    ]
+    ],
+    "types": ["descriptive"]
   },
   {
     "id": "c64b9097-23e4-4e4a-87a0-aa356abdadcc",
@@ -188,7 +207,8 @@
     "synonyms": [
       "ISMS guidance",
       "ISMS implementation guide"
-    ]
+    ],
+    "types": ["descriptive"]
   },
   {
     "id": "46aa3aca-781f-44ad-a122-f64fbc602675",
@@ -197,7 +217,8 @@
       "Security metrics",
       "Security measurement",
       "Metrics and measurement"
-    ]
+    ],
+    "types": ["descriptive"]
   },
   {
     "id": "e24e3bad-f9d0-450e-823d-b2f255a92ec1",
@@ -206,7 +227,8 @@
       "ERM",
       "Enterprise risk management",
       "All-risks ERM"
-    ]
+    ],
+    "types": ["descriptive"]
   },
   {
     "id": "0151705d-7004-416f-b734-7b7ccfc30de7",
@@ -215,7 +237,8 @@
       "Glossary",
       "Terminology",
       "Definitions"
-    ]
+    ],
+    "types": ["descriptive"]
   },
   {
     "id": "18374ced-5b4a-4706-b4b4-c57bea738aea",
@@ -225,7 +248,8 @@
       "CSF 2.0",
       "Cybersecurity Framework 2.0"
     ],
-    "description": "A voluntary outcome-based cybersecurity framework published by NIST."
+    "description": "A voluntary outcome-based cybersecurity framework published by NIST.",
+    "types": ["descriptive"]
   },
   {
     "id": "679dafe8-4041-46b7-aea7-0838b1336d62",
@@ -236,7 +260,8 @@
       "ISMS standard",
       "Information Security Management System"
     ],
-    "description": "International standard specifying requirements for an Information Security Management System (ISMS), certifiable by accredited bodies."
+    "description": "International standard specifying requirements for an Information Security Management System (ISMS), certifiable by accredited bodies.",
+    "types": ["descriptive"]
   },
   {
     "id": "ff087fec-ca13-4fa3-9b47-c4d7cfa1be0f",
@@ -246,7 +271,8 @@
       "Special Publication 800-39",
       "Managing Information Security Risk"
     ],
-    "description": "A NIST Special Publication that defines an information security risk management process."
+    "description": "A NIST Special Publication that defines an information security risk management process.",
+    "types": ["descriptive"]
   },
   {
     "id": "5678fe5d-c08e-4dc8-8fdf-bfcc2a91e3d2",
@@ -255,7 +281,8 @@
       "ISO/IEC 27005",
       "ISO 27005 Information Security Risk Management"
     ],
-    "description": "An ISO/IEC standard defining an information security risk management process."
+    "description": "An ISO/IEC standard defining an information security risk management process.",
+    "types": ["descriptive"]
   },
   {
     "id": "9dacde78-712f-4fa4-a95b-650a737e6ece",
@@ -266,7 +293,8 @@
       "RMF",
       "Risk Management Framework"
     ],
-    "description": "A NIST Special Publication defining the Risk Management Framework, a system authorization lifecycle."
+    "description": "A NIST Special Publication defining the Risk Management Framework, a system authorization lifecycle.",
+    "types": ["descriptive"]
   },
   {
     "id": "9053266d-152f-4b91-9b8a-712b5d690ba4",
@@ -276,6 +304,31 @@
       "Special Publication 800-30 Revision 1",
       "SP 800-30"
     ],
-    "description": "A NIST Special Publication defining a risk assessment methodology."
+    "description": "A NIST Special Publication defining a risk assessment methodology.",
+    "types": ["descriptive"]
+  },
+  {
+    "id": "405af00a-783c-40fd-8a43-c8716f37ed82",
+    "title": "Does not define a risk assessment methodology",
+    "synonyms": [
+      "Does not prescribe a risk assessment methodology",
+      "Methodology-agnostic",
+      "No mandated methodology"
+    ],
+    "types": ["descriptive", "illustrative"]
+  },
+  {
+    "id": "5cd2ebb2-9a98-4072-8f4d-ef75ea103e72",
+    "title": "SP 800-53",
+    "synonyms": ["NIST SP 800-53", "NIST Special Publication 800-53", "800-53"],
+    "description": "NIST Special Publication 800-53, a catalog of security and privacy controls for U.S. federal information systems.",
+    "types": ["descriptive"]
+  },
+  {
+    "id": "70ea50f4-0099-4b24-8df9-258f030dce5c",
+    "title": "ISO 27002",
+    "synonyms": ["ISO/IEC 27002", "27002"],
+    "description": "ISO/IEC 27002, a code of practice that catalogs information security controls.",
+    "types": ["descriptive"]
   }
 ]

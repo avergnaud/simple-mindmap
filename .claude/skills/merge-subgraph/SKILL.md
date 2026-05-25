@@ -34,6 +34,8 @@ Build a resolution map: `{ subgraphNodeId → resolvedId }` for every subgraph n
 - **Match found**: `resolvedId` = the existing node's ID. The subgraph node will not be added to the main graph.
 - **No match**: `resolvedId` = the subgraph node's own ID. The node will be added as new.
 
+- The `types` field is **never** used for matching. Match is based on `title` and `synonyms` only. Two nodes with identical title/synonyms but different `types` still match.
+
 ## Step 4 — Identify the subgraph root
 
 The root is the subgraph node whose ID does not appear as a `target` in any subgraph edge.
@@ -69,9 +71,13 @@ If this attachment edge would duplicate an existing edge in `data/edges.json`, s
 
 **New nodes**: subgraph nodes where `resolvedId === subgraphNodeId` (no match found). Append them to `data/nodes.json`.
 
+- New subgraph nodes are appended with their `types` field as produced by the extract step.
+
 **New edges**: the remapped, deduplicated edges plus the attachment edge. Append them to `data/edges.json`.
 
 Read the current file contents with the Read tool, merge the arrays, then write with the Write tool. Do **not** modify existing nodes or edges.
+
+- When a subgraph node matches an existing main-graph node, the existing node's `types` field is **kept as-is**. The subgraph node's `types` are discarded along with the rest of its fields. Existing nodes are never modified by a merge.
 
 ## Step 8 — Delete the subgraph files
 
