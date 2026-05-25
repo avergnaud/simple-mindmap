@@ -17,6 +17,11 @@
       border: 1px solid #ccc; border-radius: 3px; background: #f5f5f5;
     }
     button:hover { background: #e8e8e8; }
+    .node-row > button {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-width: 1.8rem; height: 1.5rem; padding: 0 0.3rem;
+      font-size: 0.8rem; line-height: 1;
+    }
     .btn-delete { color: #c00; border-color: #f99; }
     .btn-delete:hover { background: #fee; }
     .ghost .node-row { cursor: pointer; }
@@ -39,6 +44,10 @@
     }
     .add-form input:first-child { width: 14rem; }
     .add-form input:nth-child(2) { width: 18rem; }
+    .add-form select {
+      font-size: 0.85rem; padding: 0.2rem 0.4rem;
+      border: 1px solid #bbb; border-radius: 3px; background: #fff;
+    }
     .empty { color: #888; font-size: 0.9rem; }
   </style>
 </head>
@@ -91,16 +100,18 @@
       row.appendChild(btnAdd);
 
       const btnCopy = document.createElement('button');
-      btnCopy.textContent = 'copy ID';
+      btnCopy.textContent = '📋';
+      btnCopy.title = 'Copy node ID';
       btnCopy.onclick = () => {
         navigator.clipboard.writeText(node.id);
         btnCopy.textContent = 'copied!';
-        setTimeout(() => { btnCopy.textContent = 'copy ID'; }, 1500);
+        setTimeout(() => { btnCopy.textContent = '📋'; }, 1500);
       };
       row.appendChild(btnCopy);
 
       const btnDelete = document.createElement('button');
-      btnDelete.textContent = 'delete';
+      btnDelete.textContent = '❌';
+      btnDelete.title = 'Delete node';
       btnDelete.className = 'btn-delete';
       btnDelete.onclick = async () => {
         await fetch(`/api/nodes/${node.id}`, { method: 'DELETE' });
@@ -175,12 +186,19 @@
       descInput.type = 'text';
       descInput.placeholder = 'Description (optional)';
 
+      const typeSelect = document.createElement('select');
+      for (const t of ['contains', 'states']) {
+        const opt = document.createElement('option');
+        opt.value = t; opt.textContent = t;
+        typeSelect.appendChild(opt);
+      }
+
       const btnSubmit = document.createElement('button');
       btnSubmit.textContent = 'Add';
       btnSubmit.onclick = async () => {
         const t = titleInput.value.trim();
         if (!t) { titleInput.focus(); return; }
-        const body = { parentId, title: t };
+        const body = { parentId, title: t, type: typeSelect.value };
         const d = descInput.value.trim();
         if (d) body.description = d;
         await fetch('/api/nodes', {
@@ -199,6 +217,7 @@
 
       form.appendChild(titleInput);
       form.appendChild(descInput);
+      form.appendChild(typeSelect);
       form.appendChild(btnSubmit);
       form.appendChild(btnCancel);
 

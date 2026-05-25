@@ -58,7 +58,7 @@ An array of edge objects.
 |---------------|---------|----------|-----------------------------------------------------|
 | `source`      | string  | yes      | Node id of the parent                               |
 | `target`      | string  | yes      | Node id of the child                                |
-| `type`        | string  | yes      | Relationship type (e.g. "contains", "implies", "relates to") |
+| `type`        | string  | yes      | Relationship type (e.g. "contains", "states", "implies", "relates to") |
 | `description` | string  | no       | Optional description of the relationship            |
 | `primary`     | boolean | yes      | If `true`, this edge defines the primary parent link used for display hierarchy |
 
@@ -123,9 +123,9 @@ A single-page web application served on localhost (e.g. `http://localhost:3000`)
 #### 1. Add a child node (manual)
 
 - Each node has a "+" button.
-- Clicking it opens a small form: title (required), description (optional).
-- On submit, a new node is created (with an empty synonyms list) and a primary edge is added from the parent node to the new node.
-- The edge type defaults to `"contains"`.
+- Clicking it opens a small form: title (required), description (optional), edge type picker (`contains` | `states`, defaults to `contains`).
+- On submit, a new node is created (with an empty synonyms list) and a primary edge of the chosen type is added from the parent node to the new node.
+- `states` is used for assertions/facts about the parent (e.g. "ISO 27005 does not prescribe any risk assessment methodology"); `contains` is used for sub-concepts.
 
 #### 2. Copy node ID
 

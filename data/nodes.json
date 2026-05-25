@@ -103,81 +103,179 @@
   {
     "id": "f5a91382-c48c-4c56-a8ea-7a24feb8a4c8",
     "title": "Framework Types",
-    "synonyms": ["types of frameworks", "security framework categories", "framework categories"],
+    "synonyms": [
+      "types of frameworks",
+      "security framework categories",
+      "framework categories"
+    ],
     "description": "The different categories or classifications of security and risk management frameworks."
   },
   {
     "id": "cd2c294a-ca92-44ee-88f3-5ddea4fb678d",
     "title": "NIST",
-    "synonyms": ["National Institute of Standards and Technology", "NIST framework", "NIST CSF", "NIST RMF"],
+    "synonyms": [
+      "National Institute of Standards and Technology",
+      "NIST framework",
+      "NIST CSF",
+      "NIST RMF"
+    ],
     "description": "US federal agency that publishes widely adopted cybersecurity and risk management frameworks."
   },
   {
     "id": "67f2cff4-3547-417d-bb90-b2098d3ae615",
     "title": "ISO/IEC",
-    "synonyms": ["ISO", "IEC", "International Organization for Standardization", "ISO/IEC standards"],
+    "synonyms": [
+      "ISO",
+      "IEC",
+      "International Organization for Standardization",
+      "ISO/IEC standards"
+    ],
     "description": "International standards body publishing security management standards such as the ISO/IEC 27000 series."
   },
   {
     "id": "9753bdea-8611-4221-896c-f35f41b99a5e",
     "title": "Voluntary outcome framework",
-    "synonyms": ["Voluntary framework", "Outcome-based framework"]
+    "synonyms": [
+      "Voluntary framework",
+      "Outcome-based framework"
+    ]
   },
   {
     "id": "4f545e47-9cd3-41fc-b5f2-25635e8f7105",
     "title": "Certifiable management system",
-    "synonyms": ["Certifiable ISMS", "Certifiable security management system"]
+    "synonyms": [
+      "Certifiable ISMS",
+      "Certifiable security management system"
+    ]
   },
   {
     "id": "ebeb721e-9f7a-4040-9a92-38e5fec43920",
     "title": "Infosec risk management process",
-    "synonyms": ["Information security risk management", "InfoSec risk process", "IS risk management"]
+    "synonyms": [
+      "Information security risk management",
+      "InfoSec risk process",
+      "IS risk management"
+    ]
   },
   {
     "id": "7dcd8f3e-90b3-4e08-b93d-82809d302d60",
     "title": "System authorization lifecycle",
-    "synonyms": ["Authorization lifecycle", "System ATO lifecycle"]
+    "synonyms": [
+      "Authorization lifecycle",
+      "System ATO lifecycle"
+    ]
   },
   {
     "id": "b260a8b0-7271-445a-8715-3e2c8b8787d9",
     "title": "Risk assessment methodology",
-    "synonyms": ["Risk assessment approach", "Risk evaluation method"]
+    "synonyms": [
+      "Risk assessment approach",
+      "Risk evaluation method"
+    ]
   },
   {
     "id": "fb5650d6-c2c2-470e-934c-a92fc9d86301",
     "title": "Control catalog",
-    "synonyms": ["Security control catalog", "Controls library", "Controls catalogue"]
+    "synonyms": [
+      "Security control catalog",
+      "Controls library",
+      "Controls catalogue"
+    ]
   },
   {
     "id": "c64b9097-23e4-4e4a-87a0-aa356abdadcc",
     "title": "ISMS implementation guidance",
-    "synonyms": ["ISMS guidance", "ISMS implementation guide"]
+    "synonyms": [
+      "ISMS guidance",
+      "ISMS implementation guide"
+    ]
   },
   {
     "id": "46aa3aca-781f-44ad-a122-f64fbc602675",
     "title": "Measurement & metrics",
-    "synonyms": ["Security metrics", "Security measurement", "Metrics and measurement"]
+    "synonyms": [
+      "Security metrics",
+      "Security measurement",
+      "Metrics and measurement"
+    ]
   },
   {
     "id": "e24e3bad-f9d0-450e-823d-b2f255a92ec1",
     "title": "Enterprise risk management (all risks)",
-    "synonyms": ["ERM", "Enterprise risk management", "All-risks ERM"]
+    "synonyms": [
+      "ERM",
+      "Enterprise risk management",
+      "All-risks ERM"
+    ]
   },
   {
     "id": "0151705d-7004-416f-b734-7b7ccfc30de7",
     "title": "Vocabulary",
-    "synonyms": ["Glossary", "Terminology", "Definitions"]
+    "synonyms": [
+      "Glossary",
+      "Terminology",
+      "Definitions"
+    ]
   },
   {
     "id": "18374ced-5b4a-4706-b4b4-c57bea738aea",
     "title": "NIST CSF 2.0",
-    "synonyms": ["NIST Cybersecurity Framework 2.0", "CSF 2.0", "Cybersecurity Framework 2.0"],
+    "synonyms": [
+      "NIST Cybersecurity Framework 2.0",
+      "CSF 2.0",
+      "Cybersecurity Framework 2.0"
+    ],
     "description": "A voluntary outcome-based cybersecurity framework published by NIST."
   },
   {
     "id": "679dafe8-4041-46b7-aea7-0838b1336d62",
     "title": "ISO 27001 (ISMS)",
-    "synonyms": ["ISO 27001", "ISO/IEC 27001", "ISMS standard", "Information Security Management System"],
+    "synonyms": [
+      "ISO 27001",
+      "ISO/IEC 27001",
+      "ISMS standard",
+      "Information Security Management System"
+    ],
     "description": "International standard specifying requirements for an Information Security Management System (ISMS), certifiable by accredited bodies."
+  },
+  {
+    "id": "ff087fec-ca13-4fa3-9b47-c4d7cfa1be0f",
+    "title": "SP 800-39",
+    "synonyms": [
+      "NIST SP 800-39",
+      "Special Publication 800-39",
+      "Managing Information Security Risk"
+    ],
+    "description": "A NIST Special Publication that defines an information security risk management process."
+  },
+  {
+    "id": "5678fe5d-c08e-4dc8-8fdf-bfcc2a91e3d2",
+    "title": "ISO 27005",
+    "synonyms": [
+      "ISO/IEC 27005",
+      "ISO 27005 Information Security Risk Management"
+    ],
+    "description": "An ISO/IEC standard defining an information security risk management process."
+  },
+  {
+    "id": "9dacde78-712f-4fa4-a95b-650a737e6ece",
+    "title": "SP 800-37 (RMF)",
+    "synonyms": [
+      "NIST SP 800-37",
+      "Special Publication 800-37",
+      "RMF",
+      "Risk Management Framework"
+    ],
+    "description": "A NIST Special Publication defining the Risk Management Framework, a system authorization lifecycle."
+  },
+  {
+    "id": "9053266d-152f-4b91-9b8a-712b5d690ba4",
+    "title": "SP 800-30 Rev 1",
+    "synonyms": [
+      "NIST SP 800-30",
+      "Special Publication 800-30 Revision 1",
+      "SP 800-30"
+    ],
+    "description": "A NIST Special Publication defining a risk assessment methodology."
   }
 ]

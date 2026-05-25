@@ -24,8 +24,13 @@ app.get('/api/graph', (req, res) => {
 });
 
 app.post('/api/nodes', (req, res) => {
-  const { parentId, title, description } = req.body;
+  const { parentId, title, description, type } = req.body;
   if (!parentId || !title) return res.status(400).json({ error: 'parentId and title required' });
+
+  const edgeType = type || 'contains';
+  if (edgeType !== 'contains' && edgeType !== 'states') {
+    return res.status(400).json({ error: 'type must be "contains" or "states"' });
+  }
 
   const nodes = readJSON(NODES_FILE);
   const edges = readJSON(EDGES_FILE);
@@ -34,7 +39,7 @@ app.post('/api/nodes', (req, res) => {
   if (description) newNode.description = description;
 
   nodes.push(newNode);
-  edges.push({ source: parentId, target: newNode.id, type: 'contains', primary: true });
+  edges.push({ source: parentId, target: newNode.id, type: edgeType, primary: true });
 
   writeJSON(NODES_FILE, nodes);
   writeJSON(EDGES_FILE, edges);
